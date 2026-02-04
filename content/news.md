@@ -3,6 +3,8 @@ title: "News"
 layout: single
 showToc: false
 hideMeta: true
+url: "/news/"
+slug: "news"
 ---
 
 <div class="ns-accord">
