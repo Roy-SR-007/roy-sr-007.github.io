@@ -1,0 +1,1191 @@
+:root{
+    --font-heading: "Plus Jakarta Sans", sans-serif;
+    --font-body: "Merriweather", serif;
+  }
+  
+  body{ 
+    font-family: var(--font-body); 
+    font-weight: 350; 
+  }
+  
+  h1, h2, h3, nav, .navbar {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.001em;
+  }
+  .profile .buttons .button{ 
+    font-family: var(--font-heading); 
+    font-weight: 550; 
+    letter-spacing: -0.01em;
+  }
+  
+  
+  /* Base styling for all profile/home links */
+  .profile-mode a,
+  .profile a,
+  .home-info a,
+  #profile a {
+    text-decoration: none;
+    position: relative;
+    color: inherit;
+  }
+  
+  /* ---- ICON LINKS (contain SVG): keep magnify on hover ---- */
+  .profile-mode a:has(svg),
+  .profile a:has(svg),
+  .home-info a:has(svg),
+  #profile a:has(svg) {
+    display: inline-block;
+    transition: transform .25s ease, color .25s ease, fill .25s ease, stroke .25s ease;
+  }
+  
+  /* Hover scaling + font icon color */
+  .profile-mode a:has(svg):hover,
+  .profile a:has(svg):hover,
+  .home-info a:has(svg):hover,
+  #profile a:has(svg):hover {
+    transform: scale(1.25);
+    color: #500000;
+  }
+  
+  /* Dark theme — make hover color creamy white */
+  html.dark .profile-mode a:has(svg):hover,
+  html.dark .profile a:has(svg):hover,
+  html.dark .home-info a:has(svg):hover,
+  html.dark #profile a:has(svg):hover,
+  [data-theme="dark"] .profile-mode a:has(svg):hover,
+  [data-theme="dark"] .profile a:has(svg):hover,
+  [data-theme="dark"] .home-info a:has(svg):hover,
+  [data-theme="dark"] #profile a:has(svg):hover {
+    color: #ddd8d8; /* creamy white in dark mode */
+  }
+  
+  
+  
+  /* ---- TEXT LINKS (no SVG, no buttons): animated underline + glow ---- */
+  .profile-mode a:not(:has(svg)):not(.button),
+  .profile a:not(:has(svg)):not(.button),
+  .home-info a:not(:has(svg)):not(.button),
+  #profile a:not(:has(svg)):not(.button) {
+    display: inline-block;
+    transition: text-shadow .2s ease;
+  }
+  
+  /* Underline animation */
+  .profile-mode a:not(:has(svg)):not(.button)::after,
+  .profile a:not(:has(svg)):not(.button)::after,
+  .home-info a:not(:has(svg)):not(.button)::after,
+  #profile a:not(:has(svg)):not(.button)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #500000;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  
+  /* Hover: show underline + glow */
+  .profile-mode a:not(:has(svg)):not(.button):hover,
+  .profile a:not(:has(svg)):not(.button):hover,
+  .home-info a:not(:has(svg)):not(.button):hover,
+  #profile a:not(:has(svg)):not(.button):hover {
+    text-shadow: none;
+  }
+  
+  .profile-mode a:not(:has(svg)):not(.button):hover::after,
+  .profile a:not(:has(svg)):not(.button):hover::after,
+  .home-info a:not(:has(svg)):not(.button):hover::after,
+  #profile a:not(:has(svg)):not(.button):hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* ---- BUTTON LINKS: no underline, no glow ---- */
+  .profile-mode .buttons a,
+  .profile .buttons a {
+    text-shadow: none !important;
+    transform: none !important;
+  }
+  
+  .profile-mode .buttons a::after,
+  .profile .buttons a::after {
+    display: none !important;
+  }
+  .theme-toggle-float{
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    background: var(--entry);
+    box-shadow: 0 6px 20px rgba(0,0,0,.12);
+    transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+    z-index: 1200; /* above content */
+  }
+  .theme-toggle-float:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.16); }
+  .theme-toggle-float svg { pointer-events: none; }
+  @media (max-width: 640px){
+    .theme-toggle-float{ right: 1rem; bottom: 1rem; width: 40px; height: 40px; }
+  }
+  /* Hide the built-in header theme toggle (since we’re using the floating one) */
+  .logo-switches #theme-toggle {
+    display: none;
+  }
+  
+  /* === Outline-style maroon hover === */
+  :root { --nk-accent: #500000; }
+  
+  /* Base: subtle maroon border, normal text color */
+  .button,
+  .btn,
+  .home-info .button {
+    border: 2px solid var(--nk-accent);
+    background-color: transparent;
+    color: var(--nk-accent);
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+  }
+  
+  /* Hover: fill maroon + white text for clear action cue */
+  .button:hover,
+  .btn:hover,
+  .home-info .button:hover {
+    background-color: var(--nk-accent);
+    color: #ffffff !important;
+    border-color: var(--nk-accent);
+  }
+  
+  /* Ensure good visibility in dark theme */
+  [data-theme='dark'] .button,
+  [data-theme='dark'] .btn,
+  [data-theme='dark'] .home-info .button {
+    color: #ffffff;
+    border-color: var(--nk-accent);
+  }
+  [data-theme='dark'] .button:hover,
+  [data-theme='dark'] .btn:hover,
+  [data-theme='dark'] .home-info .button:hover {
+    background-color: var(--nk-accent);
+    color: #ffffff;
+  }
+  
+  /* ==== ICON HOVER — follow page toggle: body.dark ==== */
+  
+  /* Light mode (explicit reset) */
+  body:not(.dark) .profile-mode a:has(svg):hover svg,
+  body:not(.dark) .profile a:has(svg):hover svg,
+  body:not(.dark) .home-info a:has(svg):hover svg,
+  body:not(.dark) #profile a:has(svg):hover svg {
+    /* let icons just use the link's hover color (your maroon) */
+    fill: none !important;
+    stroke: #500000 !important;
+  }
+  
+  /* Dark mode — maroon fill + creamy border, creamy link color */
+  body.dark .profile-mode a:has(svg):hover,
+  body.dark .profile a:has(svg):hover,
+  body.dark .home-info a:has(svg):hover,
+  body.dark #profile a:has(svg):hover {
+    color: #ddd8d8 !important;              /* creamy text/icon color */
+  }
+  
+  body.dark .profile-mode a:has(svg):hover svg,
+  body.dark .profile a:has(svg):hover svg,
+  body.dark .home-info a:has(svg):hover svg,
+  body.dark #profile a:has(svg):hover svg,
+  body.dark .profile-mode a:has(svg):hover svg *,
+  body.dark .profile a:has(svg):hover svg *,
+  body.dark .home-info a:has(svg):hover svg *,
+  body.dark #profile a:has(svg):hover svg * {
+    fill: #500000 !important;               /* TAMU maroon fill */
+    stroke: #ddd8d8 !important;             /* creamy outline */
+    stroke-width: 1.5px !important;         /* make border visible */
+  }
+  
+  /* === Dark mode: creamy borders + creamy text underlines === */
+  
+  /* 1) Buttons / boxes: border becomes creamy in dark */
+  body.dark .button,
+  body.dark .btn,
+  body.dark .home-info .button {
+    border-color: #ddd8d8 !important;  /* creamy white */
+    color: #ddd8d8;                    /* outline style text stays readable */
+  }
+  
+  /* Keep your existing hover: maroon fill + white text */
+  body.dark .button:hover,
+  body.dark .btn:hover,
+  body.dark .home-info .button:hover {
+    background-color: #500000 !important; /* TAMU maroon */
+    border-color: #500000 !important;
+    color: #ffffff !important;
+  }
+  
+  /* 2) Text links (no SVG/buttons): underline switches to creamy white */
+  body.dark .profile-mode a:not(:has(svg)):not(.button)::after,
+  body.dark .profile a:not(:has(svg)):not(.button)::after,
+  body.dark .home-info a:not(:has(svg)):not(.button)::after,
+  body.dark #profile a:not(:has(svg)):not(.button)::after {
+    background: #ddd8d8 !important;        /* underline color in dark */
+  }
+  
+  /* (Your existing hover grows the underline via transform; this just recolors it) */
+  
+  /* Active link text */
+  #menu a span.active{
+    color:#500000; font-weight:600; border-bottom:none !important;
+  }
+  body.dark #menu a span.active{ color:#ddd8d8; }
+  
+  /* Hosts (desktop and mobile) for the moving nav underline */
+  #menu,
+  .menu__inner,
+  .menu__inner--mobile {
+    position: relative;
+    overflow: visible;
+  }
+  
+  /* Real ink element injected by JS – we move it with transform */
+  #menu .ink,
+  .menu__inner .ink,
+  .menu__inner--mobile .ink {
+    position: absolute;
+    bottom: -4px;               /* tweak up/down to taste */
+    height: 3px;
+    width: 0;                   /* JS will set width */
+    pointer-events: none;
+    z-index: 10;
+  
+    background: #500000;        /* light mode color */
+    transform: translateX(0);
+  
+    /* Hint to browser this will animate → smoother on some GPUs */
+    will-change: transform, width;
+  
+    /* Very smooth, slightly “glidey” curve */
+    transition:
+      transform 0.75s cubic-bezier(0.22, 0.44, 0, 1),
+      width     0.5s cubic-bezier(0.22, 0.44, 0, 1);
+  }
+  
+  body.dark #menu .ink,
+  body.dark .menu__inner .ink,
+  body.dark .menu__inner--mobile .ink {
+    background: #ddd8d8;        /* creamy in dark mode */
+  }
+  
+  
+  /* Optional: if your mobile row is taller */
+  @media (max-width:640px){
+    #menu .ink, .menu__inner--mobile .ink{ bottom:-6px; }
+  }
+  
+  /* Defensive: don’t let wrappers clip the ink */
+  .header, .menu, #menu, .menu__inner, .menu__inner--mobile{ overflow:visible !important; }
+  
+  
+  
+  /* === Make header bar exactly match the page background === */
+  
+  /* Light + dark: force solid bg, no blur/tint */
+  body,
+  .main,
+  .page {
+    background: var(--theme) !important;
+  }
+  
+  .header,
+  .nav,
+  .site-header,
+  .header .nav {
+    background: var(--theme) !important;   /* same as page */
+    box-shadow: none !important;           /* remove subtle bottom shadow line */
+    border-bottom: none !important;
+    -webkit-backdrop-filter: none !important; /* iOS Safari tint/blur */
+    backdrop-filter: none !important;
+  }
+  
+  /* Hide on-page title only for /teaching/ */
+  html:has(head link[rel="canonical"][href$="/contact/"]) h1.post-title {
+    display: none;
+  }
+  
+  
+  /* ===== Research timeline (SCOPED under .rk-tl) — fixed dark + pill states ===== */
+  .rk-tl{
+    --rk-accent:#7a0019;
+    --rk-card:#fff;            /* light card */
+    --rk-border:#E5E7EB;
+    --rk-secondary:#4B5563;
+    --rk-line:#d9dee3;         /* only for the little year dot */
+    margin:2.25rem 0;
+    display:flex; flex-direction:column; gap:3rem;
+    position:relative;
+  }
+  /* PaperMod uses body.dark */
+  body.dark .rk-tl{
+    --rk-card:#0f1216;         /* dark card */
+    --rk-border:#2a2f36;
+    --rk-secondary:#c7ccd1;
+    --rk-line:#3a424a;
+  }
+  
+  /* 2-column grid for aligned year + items */
+  .rk-group{
+    display:grid; grid-template-columns:160px 1fr;
+    gap:1.5rem; align-items:start;
+  }
+  .rk-year{
+    font-size:2rem; color:var(--rk-secondary); opacity:.9;
+    text-align:right; padding-right:.75rem; position:relative; white-space:nowrap;
+  }
+  /* small year/ongoing dot (remove if undesired) */
+  .rk-year::after{
+    content:""; position:absolute; right:-7px; top:.6em;
+    width:12px; height:12px; border-radius:50%; background:var(--rk-accent);
+  }
+  
+  .rk-items{ display:flex; flex-direction:column; gap:1rem; }
+  
+  /* research cards */
+  .rk-item{
+    display:grid; grid-template-columns:auto 1fr; gap:1rem; align-items:start;
+    width:100%; padding:1rem 1.25rem;
+    border:1px solid var(--rk-border); border-radius:14px; background:var(--rk-card);
+    transition:border-color .2s, box-shadow .2s, transform .2s;
+  }
+  .rk-item:hover{
+    border-color:var(--rk-accent);
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transform:translateY(-1px);
+  }
+  
+  /* tags, titles, meta */
+  .rk-tag{
+    display:inline-block; padding:.25rem .6rem; border-radius:999px;
+    background:var(--rk-accent); color:#fff; font-weight:600; font-size:.82rem; white-space:nowrap;
+  }
+  .rk-title{ margin:.1rem 0 .25rem; font-size:1.05rem; }
+  .rk-meta{ color:var(--rk-secondary); font-size:.92rem; }
+  
+  /* ===== Pills row ===== */
+  .rk-pills {
+    display: flex;
+    flex-direction: row;      /* ensure horizontal alignment */
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-top: .5rem;
+    align-items: center;      /* vertical centering */
+    justify-content: flex-start;
+  }
+  /* Outline pills for links (arXiv, PDF, etc.) */
+  .rk-pill{
+    padding:.18rem .6rem; border-radius:999px; border:1px solid var(--rk-accent); line-height:1; display:inline-flex; align-items:center;
+    text-decoration:none; font-size:.85rem; background:transparent; color:inherit; cursor:pointer;
+  }
+  .rk-pill:hover{ background:var(--rk-accent); color:#fff; }
+  
+  /* --- External-link pill style --- */
+  .rk-pill.rk-external{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    vertical-align:middle;  /* sit on the same baseline as summary pills */
+    line-height:1;          /* same text box height */
+    gap:.35em;
+    position:relative;
+    background:transparent;
+    border:1px solid var(--rk-accent);
+    color:inherit;
+    box-shadow:none;
+    transition:background .2s ease, color .2s ease;
+  }
+  
+  /* --- Normalize arXiv (external link) pill --- */
+  .rk-pill.rk-external {
+    box-shadow: none !important;          /* remove any stray shadow */
+    background: transparent;              /* stay transparent by default */
+    border: 1px solid var(--rk-accent);
+    color: inherit;
+    transition: background .2s ease, color .2s ease;
+  }
+  .rk-pill.rk-external:hover {
+    background: var(--rk-accent);
+    color: #fff;
+    box-shadow: none !important;          /* no glow on hover either */
+  }
+  body.dark .rk-pill.rk-external {
+    box-shadow: none !important;
+  }
+  
+  /* add the icon automatically after the text — fixed alignment */
+  .rk-pill.rk-external::after {
+    content: "";
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 1em;                   /* match text height */
+    height: 1em;
+    margin-left: -0.1em;
+    vertical-align: middle;       /* center with text */
+    background: currentColor;
+    mask: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>') no-repeat center / contain;
+    -webkit-mask: url('data:image/svg+xml;utf8,\<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>') no-repeat center / contain;
+    transition: transform .2s ease;
+    box-shadow: none !important;
+  }
+  
+  
+  /* hover animation */
+  .rk-pill.rk-external:hover::after {
+    transform: translateY(-1px);
+  }
+  
+  
+  /* ===== Details-as-pill (Abstract / Awards) ===== */
+  .rk-details{ display:block; max-width:100%; }
+  /* Outline by default (not filled) */
+  .rk-details > summary{
+    display:inline-flex; align-items:center; gap:.35rem;
+    list-style:none; cursor:pointer; user-select:none;
+    border-radius:999px; padding:.18rem .6rem;
+    background:transparent; color:inherit;
+    border:1px solid var(--rk-accent);
+    transition:background .2s ease, color .2s ease, border-radius .2s ease;
+  }
+  .rk-details > summary::-webkit-details-marker{ display:none; }
+  /* Hover: fill like the link pills */
+  .rk-details > summary:hover{ background:var(--rk-accent); color:#fff; }
+  /* Open: keep the pill filled, flatten bottom corners */
+  .rk-details[open]{ flex-basis:100%; }  /* make panel span full card width under the row */
+  .rk-details[open] > summary{
+    background:var(--rk-accent); color:#fff;
+    border-bottom-left-radius:0; border-bottom-right-radius:0;
+  }
+  
+  /* Attached rectangular panel */
+  .rk-details[open] .rk-abstract,
+  .rk-details[open] .rk-awards{
+    display:block; width:100%; box-sizing:border-box;
+    margin:0; padding:.9rem 1rem;
+    background:var(--rk-card); color:inherit;
+    border:1px solid var(--rk-accent); border-top:none;
+    border-bottom-left-radius:10px; border-bottom-right-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  }
+  /* ===== SAFE HARD ALIGNMENT (keeps hover/open effects) ===== */
+  :root{ --rk-pill-h: 30px; }  /* adjust if you want taller/shorter pills */
+  
+  /* ensure the row stays horizontal & vertically centered */
+  .rk-pills{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:.4rem;
+    margin-top:.5rem;
+    align-items:center;
+  }
+  
+  /* normalize layout metrics ONLY (leave visuals unlocked) */
+  .rk-details > summary,
+  .rk-pill{
+    box-sizing:border-box !important;
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:.35rem !important;
+  
+    height:var(--rk-pill-h) !important;  /* fixes cap-height/baseline variance */
+    padding:0 .6rem !important;          /* zero vertical padding gives consistency */
+    line-height:1 !important;
+    vertical-align:middle !important;
+  
+    /* ↓↓↓ NO !important here so hover/open can override ↓↓↓ */
+    border-radius:9999px;
+    border:1px solid var(--rk-accent);
+    background:transparent;
+    color:inherit;
+    text-decoration:none;
+    font-size:.85rem;
+    box-shadow:none;
+    filter:none;
+    text-shadow:none;
+    transition: background .2s ease, color .2s ease, border-radius .2s ease;
+  }
+  
+  /* remove default summary marker spacing */
+  .rk-details > summary::-webkit-details-marker{ display:none; }
+  .rk-details > summary::marker{ content:""; }
+  
+  /* tiny optical lift for the external pill if it still feels low */
+  .rk-pill.rk-external{ transform: translateY(-1px); }
+  
+  /* keep your existing ::after icon; ensure it's not nudged by 'top' */
+  .rk-pill.rk-external::after{
+    position:static;                 /* avoid top offsets that fight centering */
+    transform: translateY(-0.06em);  /* subtle cap-height alignment */
+  }
+  
+  .rk-status {
+    display: block;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 0.9em;
+    color: var(--rk-secondary);
+    margin-top: .15rem;
+  }
+  
+  /* Compact content size inside panel */
+  .rk-abstract, .rk-awards{ font-size:.85rem; line-height:1.4; color:var(--rk-secondary); }
+  .rk-abstract p, .rk-awards li{ margin:.4rem 0; }
+  
+  /* ===== Responsive ===== */
+  @media (max-width:720px){
+    .rk-group{ grid-template-columns:1fr; }
+    .rk-year{ text-align:left; padding-right:0; margin-bottom:.25rem; }
+    .rk-year::after{ display:none; }
+  }
+  
+  
+  
+  /* ===== Refined Elegant Updates (aligned, clean) ======================== */
+  .ns-accord{
+    --ns-accent:#7a0019;
+    --ns-muted: color-mix(in srgb, currentColor 60%, transparent);
+    --ns-left:95px;                     /* tighter left gutter */
+    font-size:.93rem; line-height:1.35;
+    margin-top:.5rem;
+  }
+  
+  /* Year section — simple spacing, no box */
+  .ns-year{
+    position:relative;
+    display:block;
+    padding:.2rem 0 .8rem calc(var(--ns-left));
+    margin:1rem 0 1.3rem;
+    background:transparent;
+    border:none;
+  }
+  
+  /* Clickable summary (removes arrow + extra padding) */
+  .ns-year > summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    margin-left:calc(-1*var(--ns-left));
+    padding-left:var(--ns-left);
+    padding-bottom:.1rem;
+  }
+  .ns-year > summary::-webkit-details-marker,
+  .ns-year > summary::after { display:none !important; }
+  
+  /* Year label — stronger presence */
+  .ns-yearlabel{
+    position:absolute;
+    left:0; top:0;
+    width:calc(var(--ns-left) - .5rem);
+    font-weight:800;
+    font-size:1.12rem;
+    color:var(--ns-accent);
+    letter-spacing:.02em;
+  }
+  
+  /* Hide helper text */
+  .ns-yearhint{ display:none !important; }
+  
+  /* Year list and vertical rail */
+  .ns-list{
+    position:relative;
+    margin:.2rem 0 0;
+    padding:0;
+    list-style:none;
+  }
+  .ns-list::before{
+    content:"";
+    position:absolute;
+    left:-20px;
+    top:0.6rem;
+    bottom:0.6rem;
+    width:1.5px;
+    background:color-mix(in srgb, var(--ns-accent) 20%, transparent);
+  }
+  
+  /* Each row perfectly aligned */
+  .ns-list li{
+    position:relative;
+    display:grid;
+    grid-template-columns: 40px 1fr;   /* fixed month column */
+    gap:.7rem;
+    align-items:center;
+    padding:.55rem 0;
+  }
+  .ns-list li + li{
+    border-top:1px dashed color-mix(in srgb, currentColor 18%, transparent);
+  }
+  
+  /* Month column */
+  .ns-month{
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    color:var(--ns-muted);
+    font-weight:600;
+  }
+  
+  /* Dot centered precisely on the rail */
+  .ns-list li::before{
+    content:"";
+    position:absolute;
+    left:-23px;
+    top:50%;
+    transform:translateY(-50%);
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--ns-accent);
+    box-shadow:0 0 0 3px color-mix(in srgb, var(--ns-accent) 15%, transparent);
+  }
+  
+  /* Description text */
+  .ns-body{
+    color:color-mix(in srgb, currentColor 85%, transparent);
+  }
+  .ns-body a{ text-decoration:underline; color:inherit; }
+  
+  /* Subtle hover */
+  .ns-list li:hover{
+    background:color-mix(in srgb, var(--ns-accent) 3%, transparent);
+  }
+  
+  /* Responsive tweaks */
+  @media(max-width:680px){
+    .ns-accord{ --ns-left:75px; font-size:.92rem; }
+    .ns-list::before{ left:-18px; }
+    .ns-list li::before{ left:-21px; }
+    .ns-list li{ grid-template-columns:32px 1fr; }
+  }
+  /* === Updates: final scoped overrides (PaperMod) ======================= */
+  .post-content .ns-accord{
+    --ns-accent:#7a0019;
+    --ns-muted: color-mix(in srgb, currentColor 60%, transparent);
+    --ns-left:95px;
+    font-size:1.04rem !important;     /* bump size */
+    line-height:1.45 !important;
+  }
+  
+  /* Year label size */
+  .post-content .ns-yearlabel{
+    font-size:1.18rem !important;
+    font-weight:800 !important;
+    letter-spacing:.01em;
+    color:var(--ns-accent) !important;
+  }
+  
+  /* Hide helper text + chevron */
+  .post-content .ns-yearhint{ display:none !important; }
+  .post-content details.ns-year > summary::-webkit-details-marker,
+  .post-content details.ns-year > summary::after{ display:none !important; }
+  
+  /* Right column list + rail */
+  .post-content .ns-list{
+    position:relative;
+    margin:.2rem 0 0; padding:0; list-style:none;
+  }
+  .post-content .ns-list::before{
+    content:"";
+    position:absolute;
+    left:-19px; top:.6rem; bottom:.6rem;
+    width:1.5px;
+    background:color-mix(in srgb, var(--ns-accent) 22%, transparent);
+  }
+  
+  /* Rows: widen month col, align to baseline */
+  .post-content .ns-list li{
+    position:relative;
+    display:grid;
+    grid-template-columns:46px 1fr !important;  /* wider month column */
+    gap:.7rem;
+    align-items:start !important;               /* baseline feel */
+    padding:.68rem 0 !important;                /* roomier */
+  }
+  .post-content .ns-list li + li{
+    border-top:1px dashed color-mix(in srgb, currentColor 15%, transparent);
+  }
+  
+  /* Month number */
+  .post-content .ns-month{
+    text-align:right;
+    font-variant-numeric:tabular-nums;
+    font-size:1.02rem !important;
+    font-weight:600;
+    color:var(--ns-muted);
+    transform:translateY(.06rem);               /* tiny baseline nudge */
+  }
+  
+  /* Dots on the rail (restored) */
+  .post-content .ns-list li::before{
+    content:"";
+    position:absolute;
+    left:-23px; top:50%; transform:translateY(-50%);
+    width:8px; height:8px; border-radius:50%;
+    background:var(--ns-accent);
+    box-shadow:0 0 0 3px color-mix(in srgb, var(--ns-accent) 14%, transparent);
+  }
+  
+  /* Body text a hair larger */
+  .post-content .ns-body{ font-size:1.04rem !important; }
+  
+  /* Mobile tweaks */
+  @media (max-width:680px){
+    .post-content .ns-accord{ --ns-left:75px; font-size:1.02rem !important; }
+    .post-content .ns-list::before{ left:-18px; }
+    .post-content .ns-list li::before{ left:-21px; }
+    .post-content .ns-list li{ grid-template-columns:38px 1fr !important; }
+  }
+  /* === Years as inline rail markers (no elbows) ========================== */
+  /* rail color shared */
+  .post-content .ns-accord{ --ns-rail: color-mix(in srgb, var(--ns-accent) 22%, transparent); }
+  
+  /* rail runs through the whole year block */
+  .post-content .ns-list{
+    position: relative;
+    margin: .6rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .post-content .ns-list::before{
+    content:"";
+    position:absolute;
+    left:-19px; top:-6px; bottom:-6px;   /* slight overshoot for clean ends */
+    width:1.5px; background:var(--ns-rail);
+    z-index:0;
+  }
+  
+  /* YEAR LABEL sits centered on the rail */
+  .post-content .ns-yearlabel{
+    position:absolute;
+    left: calc(var(--ns-left) - 19px);   /* x of the rail */
+    transform: translateX(-50%);         /* center it on the rail */
+    top: -0.2rem;                        /* adjust vertical to taste */
+    font-weight:800; font-size:1.12rem;
+    color: var(--ns-accent);
+    background: var(--theme);            /* mask the rail behind the text */
+    padding: .05rem .45rem;
+    border-radius: .35rem;
+    box-shadow: 0 0 0 .25rem var(--theme); /* extra mask ring for clarity */
+  }
+  
+  /* keep summary clickable but invisible UI bits hidden */
+  .post-content details.ns-year > summary{
+    cursor: pointer; list-style: none;
+    display: block; padding-bottom: .2rem;
+  }
+  .post-content details.ns-year > summary::-webkit-details-marker,
+  .post-content details.ns-year > summary::after{ display:none !important; }
+  
+  /* rows (unchanged, but keep dots above the rail) */
+  .post-content .ns-list li{
+    position:relative;
+    display:grid; grid-template-columns:46px 1fr;
+    gap:.7rem; align-items:start; padding:.68rem 0;
+    border-top:1px dashed color-mix(in srgb, currentColor 15%, transparent);
+  }
+  .post-content .ns-list li:first-child{ border-top:0; }
+  
+  .post-content .ns-month{
+    text-align:right; font-variant-numeric:tabular-nums;
+    font-weight:600; color:var(--ns-muted);
+  }
+  
+  .post-content .ns-list li::before{
+    content:"";
+    position:absolute;
+    left:-23px; top:1.15em;              /* aligns near text baseline */
+    width:8px; height:8px; border-radius:50%;
+    background: var(--ns-accent);
+    box-shadow:0 0 0 3px color-mix(in srgb, var(--ns-accent) 14%, transparent);
+    z-index:2;                           /* above the rail */
+  }
+  
+  .post-content .ns-body{ font-size:1.04rem; }
+  .post-content .ns-list li:hover{
+    background: color-mix(in srgb, var(--ns-accent) 3%, transparent);
+  }
+  
+  /* mobile */
+  @media (max-width:680px){
+    .post-content .ns-accord{ --ns-left:75px; }
+    .post-content .ns-yearlabel{ top:-.1rem; font-size:1.08rem; }
+    .post-content .ns-list::before{ left:-18px; }
+    .post-content .ns-list li::before{ left:-21px; }
+    .post-content .ns-list li{ grid-template-columns:38px 1fr; }
+  }
+  /* === Vertical balance tweak for timeline ============================== */
+  
+  /* lower the whole rail + dots a bit */
+  .post-content .ns-list::before{
+    top: 6px !important;     /* previously -6px */
+    bottom: -6px !important;
+  }
+  
+  /* dots: shift slightly downward with the text baseline */
+  .post-content .ns-list li::before{
+    top: calc(50% + 4px) !important;   /* moves the dot down */
+  }
+  
+  /* optional: more breathing room below the year label */
+  .post-content .ns-year{
+    margin-top: 1.4rem !important;
+  }
+  
+  /* optional: slightly more gap between year label and first row */
+  .post-content .ns-list{
+    margin-top: .45rem !important;
+  }
+  /* === Vertically center each year label between timeline segments === */
+  .post-content .ns-year {
+    display: flex;
+    align-items: center;
+    min-height: 6rem; /* adjust this depending on spacing between year blocks */
+    position: relative;
+  }
+  
+  
+  /* Ensure the timeline line stays continuous */
+  .post-content .ns-list::before {
+    top: 0;
+    bottom: 0;
+  }
+  /* Add space below the page title on Updates page */
+  .single-title,
+  .post-title {
+    margin-bottom: 3rem;   /* adjust: try 2rem or 40px if you want more gap */
+  }
+  /* Trim ONLY the final year's rail so it doesn't extend past the last dot */
+  .post-content .ns-year:last-of-type .ns-list {
+    position: relative;
+  }
+  .post-content .ns-year:last-of-type .ns-list::after{
+    content:"";
+    position:absolute;
+    left:-19px;            /* same x as your rail */
+    bottom:0;
+    width:1.5px;           /* same thickness as the rail */
+    height:19px;            /* ≈ dot(8px)/2 + ring(3px) → tweak 8–10px to taste */
+    background: var(--theme);   /* matches light/dark automatically */
+    z-index:1;             /* above the rail (which is z-index:0), below dots (z-index:2) */
+  }
+  /* Make the last rail stop at the dot center */
+  .post-content .ns-year:last-of-type .ns-list::before{
+    bottom: 8px !important;        /* remove the -6px overshoot and stop where you want */
+  }
+  
+  /* Collapse behavior: when a year is closed, no extra space remains */
+  
+  /* 1) Don't force a tall box when closed */
+  .post-content details.ns-year { min-height: 0 !important; margin: 0 0 .6rem !important; }
+  .post-content details.ns-year[open] { margin: 0 0 1.3rem !important; }  /* spacing when open */
+  
+  /* 2) Hide the list and the rail when closed */
+  .post-content details.ns-year:not([open]) .ns-list { display: none !important; }
+  .post-content details.ns-year:not([open]) .ns-list::before { display: none !important; }
+  
+  /* 3) If you added this earlier, override it so it doesn't force height */
+  .post-content details.ns-year { display:block !important; align-items:unset !important; }
+  .post-content details.ns-year h3,
+  .post-content details.ns-year .ns-yearlabel {
+    transform:translateY(-60%) !important;   /* avoid vertical nudge when closed */
+    left:40px;                   /* keep your current label positioning if needed */
+  }
+  
+  /* === Timeline colors adaptive to PaperMod theme toggle =============== */
+  
+  /* Light mode (default) */
+  .post-content .ns-accord {
+    --ns-accent: #7a0019; /* TAMU maroon */
+    --ns-rail: color-mix(in srgb, var(--ns-accent) 22%, transparent);
+  }
+  
+  /* Dark mode (PaperMod adds .dark on <body>) */
+  body.dark .post-content .ns-accord {
+    --ns-accent: #ddd8d8; /* creamy white tone */
+    --ns-rail: color-mix(in srgb, var(--ns-accent) 70%, transparent);
+  }
+  
+  /* Ensure the rail + dots actually use those vars */
+  .post-content .ns-list::before {
+    background: var(--ns-rail) !important;
+  }
+  .post-content .ns-list li::before {
+    background: var(--ns-accent) !important;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--ns-accent) 25%, transparent) !important;
+  }
+  
+  /* === Updates page: [open] hint styling === */
+  .ns-openhint {
+    font-size: 0.6em;
+    opacity: 0.5;
+    margin-left: 0.25em;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -0.15em;
+  }
+  
+  /* === Updates timeline links (e.g., arXiv) ====================== */
+  .post-content .ns-body a,
+  .post-content .ns-body a:link,
+  .post-content .ns-body a:visited {
+    color: var(--ns-accent) !important;
+    text-decoration: none !important;
+    border-bottom: 2px solid var(--ns-accent) !important;
+    box-shadow: none !important;
+    padding-bottom: 1px;
+    font-weight: 500;
+    transition:
+      border-bottom-width 0.15s ease,
+      color 0.15s ease,
+      font-weight 0.15s ease;
+  }
+  
+  .post-content .ns-body a:hover,
+  .post-content .ns-body a:active {
+    border-bottom-width: 3px !important;
+    font-weight: 700 !important;
+    color: var(--ns-accent) !important;
+  }
+  
+  /* === Year label emphasis ============================================ */
+  .post-content .ns-yearlabel{
+    font-size: 1.35rem !important;   /* bolder, more readable */
+    font-weight: 850 !important;
+    letter-spacing: .02em;
+    color: var(--ns-accent);
+  }
+  
+  /* Optional: even stronger in dark mode (so creamy white pops) */
+  body.dark .post-content .ns-yearlabel{
+    color: #ddd8d8;
+  }
+  
+  /* Smooth text-only animation (keeps rail/dots intact) */
+  .post-content .ns-list li .ns-month,
+  .post-content .ns-list li .ns-body{
+    transition: opacity .25s ease, transform .25s ease;
+    will-change: opacity, transform;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .post-content .ns-list li .ns-month,
+    .post-content .ns-list li .ns-body{ transition: none !important; }
+  }
+  
+  /* Bio links: animated underline with a clean gap, no clipping */
+  .profile .profile_inner p a{
+    display: inline;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+  
+    /* create the gap via padding, not by lowering the underline */
+    padding-bottom: 3px;                 /* the visible gap */
+    background-origin: content-box;      /* respect the padding for the underline */
+  
+    background-image: linear-gradient(var(--nk-accent, #500000), var(--nk-accent, #500000));
+    background-repeat: no-repeat;
+    background-position: 0 118%;         /* sit at baseline */
+    background-size: 0% 2.4px;           /* full thickness, tweak 2.2–2.6px if needed */
+    transition: background-size .3s ease;
+  }
+  
+  .profile .profile_inner p a:hover{
+    background-size: 100% 2.4px;
+  }
+  
+  /* prevent double underline from the global ::after rule */
+  .profile .profile_inner p a::after{ content:none !important; }
+  
+  /* Dark mode color */
+  body.dark .profile .profile_inner p a{
+    background-image: linear-gradient(#ddd8d8, #ddd8d8);
+  }
+  
+  
+  /* === Control spacing between social icons === */
+  .social-icons {
+    display: flex;
+    justify-content: center;  /* keeps them centered */
+    align-items: center;
+    gap: 0.1rem;              /* adjust this number for spacing (0.4rem = tighter, 1rem = wider) */
+  }
+  
+  /* optional: if theme already sets margins, remove them */
+  .social-icons a {
+    margin: 0 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* optional: if icons look slightly misaligned */
+  .social-icons svg {
+    vertical-align: middle;
+  }
+  
+  
+  /* Prevent the year label from wrapping on mobile */
+  .ns-yearlabel {
+    white-space: nowrap;     /* keep year on one line */
+    flex-shrink: 0;          /* don't let it compress */
+  }
+  
+  /* Optional: nudge spacing on smaller screens */
+  @media (max-width: 600px) {
+    .ns-yearlabel {
+      font-size: 0.95rem;    /* slightly smaller text */
+      margin-right: 0.3rem;  /* a bit more breathing room */
+    }
+  }
+  
+  
+  
+  /* blinking caret animation */
+  .bio-caret {
+    display: inline-block;
+    width: 1ch;
+    color: inherit;
+    animation: bio-caret-blink 1s steps(1) infinite;
+  }
+  
+  @keyframes bio-caret-blink {
+    50% { opacity: 0; }
+  }
+  
+  /* === Hamburger: base icon === */
+  .menu-trigger {
+    display: none;                 /* hidden on desktop */
+    border: 0;
+    background: transparent;
+    padding: .4rem;
+    margin-left: auto;
+    cursor: pointer;
+  }
+  .menu-trigger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 4px 0;
+    background: currentColor;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  
+  /* === Mobile behavior (<=768px) === */
+  @media (max-width: 768px) {
+    .header .nav { position: relative; z-index: 2; }  /* anchor dropdown */
+    .header .nav .logo { flex: 1 1 auto; }
+    .header .nav .menu-trigger { display: block !important;
+      margin-left: auto;        /* keep it on the right */
+      margin-right: 0.5rem;  }
+  
+    /* Hide menu by default; absolute dropdown anchored to nav */
+    .header .nav #menu {
+      position: absolute !important;
+      top: 100% !important;
+      right: 0.5rem !important;          /* match your .menu-trigger margin-right */
+      left: auto !important;
+      text-align: right !important;
+  
+      /* 🔹 Width adapts to content */
+      width: max-content;               /* safety so it’s not too tiny */
+      max-width: calc(100vw - 2rem);   /* safety on very narrow screens */
+      background: var(--theme, #fff) !important;
+      padding: .75rem 1rem !important;
+      border-top: 1px solid var(--entry, rgba(0,0,0,.06)) !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06) !important;
+  
+      display: none !important;                /* override theme defaults */
+      flex-direction: column !important;
+      gap: .6rem !important;
+      z-index: 1000 !important;
+    }
+  
+    /* Show when open */
+    body.menu-open .header .nav #menu {
+      display: flex !important;
+    }
+  
+    .header .nav #menu li { list-style: none !important; }
+    .header .nav #menu a  { display: block !important; padding: .45rem 0 !important; }
+  }
+  
+  /* Prevent background scroll while open (iOS safe) */
+  body.menu-open { overflow: hidden !important; }
+  
+  /* Morph hamburger into X when open */
+  body.menu-open .menu-trigger span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  body.menu-open .menu-trigger span:nth-child(2) { opacity: 0; }
+  body.menu-open .menu-trigger span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  
+  @media (max-width: 768px) {
+    #menu li { margin: 0 !important; list-style: none !important; }
+    #menu a  { display: block !important; padding: .9rem 1rem !important; line-height: 1.2 !important; }
+  }
+  
+  
+  /* Subtle background + fade-in for dropdown */
+  body.menu-open .header .nav #menu {
+    animation: fadeDown 0.2s ease-out;
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-0.4rem); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Optional: soften the touch area around the icon */
+  .menu-trigger {
+    border-radius: 4px;
+  }
+  .menu-trigger:hover {
+    background: rgba(0,0,0,0.04);
+  }
+  
+  /* Optional: adjust X icon thickness for better balance */
+  .menu-trigger span {
+    height: 2px;
+    border-radius: 2px;
+  }
+  
+  body.menu-open .header .nav #menu {
+    background: rgba(255, 255, 255, 0.96) !important;   /* light mode */
+    color: var(--primary, #111);
+    backdrop-filter: blur(1.5px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.22) !important;
+    border-radius: 0 0 25px 25px;
+  }
+  body.dark.menu-open .header .nav #menu {
+    background: rgba(25, 25, 25, 0.96) !important;       /* dark mode */
+    color: var(--theme, #f4f4f4);
+  }
+  
+  @supports not selector(a:has(svg)) {
+    /* fallback hover on all links (less precise but works) */
+    .profile-mode a:hover,
+    .profile a:hover,
+    .home-info a:hover,
+    #profile a:hover {
+      color: #500000;
+    }
+    body.dark .profile-mode a:hover,
+    body.dark .profile a:hover,
+    body.dark .home-info a:hover,
+    body.dark #profile a:hover {
+      color: #ddd8d8;
+    }
+  }
+  

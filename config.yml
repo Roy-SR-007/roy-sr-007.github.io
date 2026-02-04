@@ -4,33 +4,52 @@ theme: PaperMod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
+enableGitInfo: true
+
 pagination:
   pagerSize: 20
 
+disableKinds: ["taxonomy", "term"]
 taxonomies:
     tag: tags
 
 menu:
     main:
-        - name: Books
-          url: books/
-          weight: 5 
-        - name: Papers
-          url: papers/
+        - name: About
+          url: /
+          weight: 1 
+        - name: Research
+          url: /papers/
           weight: 2
-        - name: Courses
-          url: courses/
+        - name: Software
+          url: /software/
           weight: 3
-        - name: Data
-          url: data/
+        - name: Awards
+          url: /awards/
           weight: 4 
-        - name: Blog
-          url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
-          weight: 6
+        - name: News
+          url: /news/
+          weight: 5
+        - name: Contact
+          url: /contact/
+          weight: 5
+        #- name: Vitaè
+        #  url: static/cv.pdf
+        #  weight: 6
 
 params:
-    description: "This website hosts Moritz-Maria von Igelfeld's research papers, books, course materials, data, curriculum vitae, and contact information."
-    author: Moritz-Maria von Igelfeld
+    description: "Somjit Roy - Ph.D. student in Statistics at Texas A&M University. My research lies at the intersection of Probabilistic Scientific Machine Learning and Computational Bayes."
+    author: "Somjit Roy | Texas A&M University"
+    
+    #env: production
+    #images: "https://roy-sr-007.github.io/somjit-1.jpg"
+    #keywords:
+    #  - "Somjit Roy"
+    #  - "Texas A&M University"
+    #  - "Bayesian statistics"
+    #  - "Scientific Machine Learning"
+    #  - "Symbolic regression"
+    
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "January 2006"
     defaultTheme: light
@@ -54,58 +73,70 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Professor Dr von Igelfeld
-          subtitle: "I am a Professor in the Institute of Romance Philology at the University of Regensburg, Germany. My research focuses on Portuguese irregular verbs. I was a doctoral student of Professor Dr Dieter Vogelsang in Munich, and later a second assistant of Professor Walter Schoeffler-Henschell at the University of Wiesbaden."
-          imageUrl: "picture.jpeg"
-          imageWidth: 160
-          imageHeight: 160
+          title: Somjit Roy
+          subtitle: |
+            I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Department of Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank">Texas A&M University</a>, where I am advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Dr. Bani K. Mallick</a> (TAMU Statistics) and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Dr. Debdeep Pati</a> (UW-Madison Statistics).
+          imageUrl: "somjit-1.jpg"
+          imageWidth: 220
+          imageHeight: 220
           buttons:
-            - name: Papers
-              url: papers/
-            - name: Data
-              url: data/
-            - name: Books
-              url: books/
-            - name: Courses
-              url: courses/
-            - name: Tags
-              url: tags/
-            - name: Archive
-              url: archive/
-            - name: Blog
-              url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
+            - name: Research
+              url: /research/
+            - name: Software
+              url: /software/
+            - name: Awards
+              url: /awards/
+            - name: News
+              url: /news/
+            - name: Contact
+              url: /contact/
+            #- name: Vitaè
+            #  url: static/cv.pdf
+            #- name: Blog
+            #  url: https://en.wikipedia.org/wiki/Moritz-Maria_von_Igelfeld_(character)
 
     socialIcons:
-        - name: CV
-          url: cv.pdf
         - name: Email
-          url: mailto:igelfeld@regensburg.edu
-        - name: Zoom
-          url: https://www.zoom.us/my/igelfeld
+          url: mailto:sroy_123@tamu.edu
+        #- name: Zoom
+        #  url: https://www.zoom.us/my/igelfeld
+        #- name: Office Hours
+        #  url: officehours/
+        - name: Google Scholar
+          url: https://scholar.google.com/citations?user=NlI6_lcAAAAJ&hl=en
+        - name: ORCID
+          url: https://orcid.org/0009-0000-0274-3359
+        - name: GitHub
+          url: https://github.com/Roy-SR-007
+        #- name: Substack
+        #  url: https://pmichaillat.substack.com
+        #- name: YouTube
+        #  url: https://www.youtube.com/@pmichaillat
+        #- name: Twitter
+        #  url: https://x.com/pmichaillat
+        #- name: Bluesky
+        #  url: https://bsky.app/profile/pmichaillat.bsky.social
+        - name: LinkedIn
+          url: https://www.linkedin.com/in/somjit-r-6b0965114/
+        - name: CV 
+          url: resume.pdf
         - name: Location
           url: location/
-        - name: Office Hours
-          url: officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=cL23w-4AAAAJ
-        - name: GitHub
-          url: https://github.com/pmichaillat
-        - name: Substack
-          url: https://pmichaillat.substack.com
-        - name: YouTube
-          url: https://www.youtube.com/@pmichaillat
-        - name: Twitter
-          url: https://x.com/pmichaillat
-        - name: Bluesky
-          url: https://bsky.app/profile/pmichaillat.bsky.social
 
     assets:
         disableScrollBarStyle: true
+        favicon: "favicon.ico"
+        favicon16x16: "favicon-16x16.png"
+        favicon32x32: "favicon-32x32.png"
+        apple_touch_icon: "apple-touch-icon.png"
+        android_chrome_192: "android-chrome-192x192.png"
+        android_chrome_512: "android-chrome-512x512.png"
+
     cover:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Moritz-Maria von Igelfeld"
+      text: "Somjit Roy"
       icon: favicon.ico
       iconHeight: 18
 
