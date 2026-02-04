@@ -77,7 +77,7 @@ params:
           subtitle: |
             <p>I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Department of Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank">Texas A&M University</a>, where I am advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Dr. Bani K. Mallick</a> (TAMU Statistics) and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Dr. Debdeep Pati</a> (UW-Madison Statistics).</p>
             <br>
-            <p>My research develops next-generation statistical modeling frameworks that integrate data-driven learning with scientific reasoning. I work at the intersection of scientifically guided statistical inference and computational Bayesian methods, with a focus on scientific machine learning, approximate Bayesian inference, and Bayesian optimization, motivated by applications in engineering, physics, geosciences, and bioinformatics. For more insights, visit the <a href="/research/">Research</a> page.</p>
+            <p>My research bridges data-driven learning and scientific reasoning through computational Bayes, with a focus on scientific machine learning, approximate Bayesian inference, and Bayesian optimization for complex scientific systems. For more insights, visit the <a href="/research/">Research</a> page.</p>
           imageUrl: "somjit-1.jpg"
           imageWidth: 220
           imageHeight: 220

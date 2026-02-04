@@ -5,103 +5,292 @@ showToc: false
 hideMeta: true
 ---
 
+<div class="rk-intro">
+  <p>
+    My research develops next-generation statistical modeling frameworks that integrate data-driven learning with scientific reasoning.
+    I work at the intersection of scientifically guided statistical inference and computational Bayesian methods, with a focus on scientific machine learning,
+    approximate Bayesian inference, and Bayesian optimization, motivated by applications in engineering, physics, geosciences, and bioinformatics.
+  </p>
+</div>
                        
 <section class="rk-tl">
 
-  <!-- Ongoing -->
-  <!--<div class="rk-group">
-    <div class="rk-year">Ongoing</div>
-    <div class="rk-items">
+  <!-- 2026 -->
+<div class="rk-group">
+
+<div class="rk-year">2026</div>
+
+<div class="rk-items">
 
 <article class="rk-item">
-<div class="rk-left"><span class="rk-tag">aFed</span></div>
+<div class="rk-left"><span class="rk-tag">GP-TS</span></div>
 <div class="rk-body">
-<h3 class="rk-title">Adaptive Federated Gaussian Process Regression via Two-Round Communication</h3>
+<h3 class="rk-title">Frequentist Regret Analysis of Gaussian Process Thompson Sampling via Fractional Posteriors</h3>
 <div class="rk-meta">
-<strong>Niladri Kal</strong>, Botond Szabó, Rajarshi Guhaniyogi, Natesh Pillai, Debdeep Pati 
-<span class="rk-status"><em>In preparation</em></span>
+<strong>Somjit Roy</strong>, Prateek Jaiswal, Anirban Bhattacharya, Debdeep Pati, and Bani K. Mallick 
+<span class="rk-status"><em>Submitted, Under review</em></span>
 </div>
-
 <div class="rk-pills">
+<!--<details class="rk-details">
+<summary class="rk-pill">Awards</summary>
+<ul class="rk-awards"><li>🥈 Silver Prize – 2024 SETCASA Poster Session</li></ul>
+</details>-->
 <details class="rk-details">
-        <summary class="rk-pill">Awards</summary>
-        <ul class="rk-awards"><li>🥈 Silver Prize – 2024 SETCASA Poster Session</li></ul>
-    </details>
-    </div>
-    </div>
-    </article>
-
+<summary class="rk-pill">Abstract</summary>
+<div class="rk-abstract">
+We study Gaussian Process Thompson Sampling (GP-TS) for sequential decision-making over compact, continuous action spaces and provide a frequentist regret analysis based on fractional Gaussian process posteriors, without relying on domain discretization as in prior work. We show that the variance inflation commonly assumed in existing analyses of GP-TS can be interpreted as Thompson Sampling with respect to a fractional posterior with tempering parameter $\alpha \in (0,1)$. We derive a kernel-agnostic regret bound expressed in terms of the information gain parameter $\gamma_t$ and the posterior contraction rate $\epsilon_t$, and identify conditions on the Gaussian process prior under which $\epsilon_t$ can be controlled. As special cases of our general bound, we recover regret of order $\mathcal{\tilde O}(T^{\frac{1}{2}})$ for the squared exponential kernel, $\mathcal{\tilde O}(T^{\frac{2\nu+3d}{2(2\nu+d)}} )$ for the Mat&eacutern-$\nu$ kernel, and a bound of order $\tilde{\mathcal O}(T^{\frac{2\nu+3d}{2(2\nu+d)}})$ for the rational quadratic kernel. Overall, our analysis provides a unified and discretization-free regret framework for GP-TS that applies broadly across kernel classes.
 </div>
-</div>-->
+</details>
+</div>
+</div>
+</article>
+</div>
+</div>
 
-  <!-- 2025 -->
-  <div class="rk-group">
-    <div class="rk-year">2025</div>
-    <div class="rk-items">
+<!-- 2025 -->
+<div class="rk-group">
+<div class="rk-year">2025</div>
+
+<div class="rk-items">
+<!-- Paper 1 -->
 <article class="rk-item">
 <div class="rk-left"><span class="rk-tag">HierBOSSS</span></div>
 <div class="rk-body">
 <h3 class="rk-title">Hierarchical Bayesian Operator-induced Symbolic Regression Trees for Structural Learning of Scientific Expressions</h3>
 <div class="rk-meta">
-  <strong>Somjit Roy</strong>, Pritam Dey, Debdeep Pati, and Bani K. Mallick  
-  <span class="rk-status"><em>Submitted, Under review</em></span>
+<strong>Somjit Roy</strong>, Pritam Dey, Debdeep Pati, and Bani K. Mallick
+<span class="rk-status"><em>Submitted, Under review</em></span>
 </div>
-
 
 <div class="rk-pills">
 <details class="rk-details">
-        <summary class="rk-pill">Awards</summary>
-        <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
-        <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
-    </details>
-    <details class="rk-details">
-        <summary class="rk-pill">Abstract</summary>
-        <div class="rk-abstract">
-            The advent of Scientific Machine Learning has heralded a transformative era in scientific discovery, driving progress across diverse domains. Central to this progress is uncovering scientific laws from experimental data through symbolic regression. However, existing approaches are dominated by heuristic algorithms or data-hungry black-box methods, which often demand low-noise settings and lack principled uncertainty quantification. Motivated by interpretable Statistical Artificial Intelligence, we develop a hierarchical Bayesian framework for symbolic regression that represents scientific laws as ensembles of tree-structured symbolic expressions endowed with a regularized tree prior. This coherent probabilistic formulation enables full posterior inference via an efficient Markov chain Monte Carlo algorithm, yielding a balance between predictive accuracy and structural parsimony. To guide symbolic model selection, we develop a marginal posterior-based criterion adhering to the Occam's window principle and further quantify structural fidelity to ground truth through a tailored expression-distance metric. On the theoretical front, we establish near-minimax rate of Bayesian posterior concentration, providing the first rigorous guarantee in context of symbolic regression. Empirical evaluation demonstrates robust performance of our proposed methodology against state-of-the-art competing modules on a simulated example, a suite of canonical Feynman equations, and single-atom catalysis dataset.
-        </div>
-    </details>
-    <a class="rk-pill rk-external" href="https://arxiv.org/abs/2509.19710"
-    target="_blank" rel="noopener noreferrer">
-    arXiv
-    </a>
-    </div>
-    </div>
-    </article>
+  <summary class="rk-pill">Abstract</summary>
+  <div class="rk-abstract">The advent of Scientific Machine Learning has heralded a transformative era in scientific discovery, driving progress across diverse domains. Central to this progress is uncovering scientific laws from experimental data through symbolic regression. However, existing approaches are dominated by heuristic algorithms or data-hungry black-box methods, which often demand low-noise settings and lack principled uncertainty quantification. Motivated by interpretable Statistical Artificial Intelligence, we develop a hierarchical Bayesian framework for symbolic regression that represents scientific laws as ensembles of tree-structured symbolic expressions endowed with a regularized tree prior. This coherent probabilistic formulation enables full posterior inference via an efficient Markov chain Monte Carlo algorithm, yielding a balance between predictive accuracy and structural parsimony. To guide symbolic model selection, we develop a marginal posterior–based criterion adhering to the Occam’s window principle and further quantify structural fidelity to ground truth through a tailored expression-distance metric. On the theoretical front, we establish near-minimax rate of Bayesian posterior concentration, providing the first rigorous guarantee in context of symbolic regression. Empirical evaluation demonstrates robust performance of our proposed methodology against state-of-the-art competing modules on a simulated example, a suite of canonical Feynman equations, and single-atom catalysis dataset.</div>
+</details>
+<a class="rk-pill rk-external"
+    href="https://arxiv.org/abs/2509.19710"
+    target="_blank" rel="noopener noreferrer">arXiv</a>
 
+<details class="rk-details">
+  <summary class="rk-pill">Awards</summary>
+  <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
+  <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
+</details>
+</div>
+</div>
+</article>
 
-<div class="rk-items">
+<!-- Paper 2 -->
 <article class="rk-item">
 <div class="rk-left"><span class="rk-tag">TAVIE-SSG</span></div>
 <div class="rk-body">
 <h3 class="rk-title">A Generalized Tangent Approximation based Variational Inference Framework for Strongly Super-Gaussian Likelihoods</h3>
 <div class="rk-meta">
-  <strong>Somjit Roy</strong>, Pritam Dey, Debdeep Pati, and Bani K. Mallick  
-  <span class="rk-status"><em>Submitted, Under review</em></span>
+<strong>Somjit Roy</strong>, Pritam Dey, Debdeep Pati, and Bani K. Mallick
+<span class="rk-status"><em>Submitted, Under review</em></span>
 </div>
-
 
 <div class="rk-pills">
-<!--<details class="rk-details">
-        <summary class="rk-pill">Awards</summary>
-        <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
-        <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
-    </details>-->
-    <details class="rk-details">
-        <summary class="rk-pill">Abstract</summary>
-        <div class="rk-abstract">
-            Variational inference, as an alternative to Markov chain Monte Carlo sampling, has played a transformative role in enabling scalable computation for complex Bayesian models. Nevertheless, existing approaches often depend on either rigid model-specific formulations or stochastic black-box optimization routines.  Tangent approximation is a principled class of structured variational methods that exploits the geometry of the underlying probability model. However, its utility has largely been confined to logistic regression and related modeling regimes. In this article, we propose a novel variational framework based on tangent transformation for a broad class of probability models characterized by strongly super-Gaussian likelihoods. Our method leverages convex duality to construct tangent minorants of the log-likelihood, thereby inducing conjugacy with Gaussian priors over model parameters in an otherwise intractable setup. Under mild assumptions on the data-generating mechanism, we establish algorithmic convergence guarantees, a contribution that stands in contrast to the limited theoretical assurances typically available for black-box variational methods. Additionally, we derive near-minimax optimal bounds for the variational risk. Superior performance of our proposed methodology is illustrated on simulated and real-data scenarios that challenge state-of-the-art variational algorithms in terms of scalability and their ability to consistently capture complex underlying data structure.
-        </div>
-    </details>
-    <a class="rk-pill rk-external" href="https://arxiv.org/abs/2504.05431"
-    target="_blank" rel="noopener noreferrer">
-    arXiv
-    </a>
-    </div>
-    </div>
-    </article>
-    
-
+<details class="rk-details">
+  <summary class="rk-pill">Abstract</summary>
+  <div class="rk-abstract">Variational inference, as an alternative to Markov chain Monte Carlo sampling, has played a transformative role in enabling scalable computation for complex Bayesian models. Nevertheless, existing approaches often depend on either rigid model-specific formulations or stochastic black-box optimization routines.  Tangent approximation is a principled class of structured variational methods that exploits the geometry of the underlying probability model. However, its utility has largely been confined to logistic regression and related modeling regimes. In this article, we propose a novel variational framework based on tangent transformation for a broad class of probability models characterized by strongly super-Gaussian likelihoods. Our method leverages convex duality to construct tangent minorants of the log-likelihood, thereby inducing conjugacy with Gaussian priors over model parameters in an otherwise intractable setup. Under mild assumptions on the data-generating mechanism, we establish algorithmic convergence guarantees, a contribution that stands in contrast to the limited theoretical assurances typically available for black-box variational methods. Additionally, we derive near-minimax optimal bounds for the variational risk. Superior performance of our proposed methodology is illustrated on simulated and real-data scenarios that challenge state-of-the-art variational algorithms in terms of scalability and their ability to consistently capture complex underlying data structure.</div>
+</details>
+<a class="rk-pill rk-external" href="https://arxiv.org/abs/2504.05431" target="_blank" rel="noopener noreferrer">arXiv</a>
 </div>
+</div>
+</article>
+  </div>
+</div>
+
+
+<!-- 2024 -->
+<div class="rk-group">
+
+<div class="rk-year">2024</div>
+
+<div class="rk-items">
+
+<article class="rk-item">
+<div class="rk-left"><span class="rk-tag">APMUBs</span></div>
+<div class="rk-body">
+<h3 class="rk-title">Almost Perfect Mutually Unbiased Bases that are Sparse</h3>
+<div class="rk-meta">
+Ajeet Kumar, Subhamoy Maitra, and <strong>Somjit Roy</strong>
+<span class="rk-status"><em></em>Journal of Statistical Theory and Practice</span>
+</div>
+<div class="rk-pills">
+<!--<details class="rk-details">
+<summary class="rk-pill">Awards</summary>
+<ul class="rk-awards"><li>🥈 Silver Prize – 2024 SETCASA Poster Session</li></ul>
+</details>-->
+<details class="rk-details">
+<summary class="rk-pill">Abstract</summary>
+<div class="rk-abstract">
+Selected ideas of statistical designs are exploited in this paper in constructions related to Mutually Unbiased Bases (MUBs). In dimension $d$, MUBs are a collection of orthonormal bases over $\mathbb{C}^{d}$ such that for any two vectors $v_1, v_2$ belonging to different bases, the dot or scalar product $|\braket{v_1 | v_2}| = \frac{1}{\sqrt{d}}$. The upper bound on the number of such bases is $d+1$. Construction methods to achieve this bound are known for cases when $d$ is some power of prime. The situation is more restrictive in other cases and also when we consider the results over real rather than complex. Thus, certain relaxations of this model are considered in literature and consequently Approximate MUBs (AMUBs) are studied. This enables one to construct potentially large number of such objects for $\mathbb{C}^{d}$ as well as in $\mathbb{R}^{d}$. In this regard, we propose the concept of Almost Perfect MUBs (APMUB), where we restrict the absolute value of inner product $|\braket{v_1 | v_2}|$ to be two-valued, one being $0$ and the other $\leq \frac{1 + \mathcal{O}(d^{-\lambda})}{\sqrt{d}}$, such that $\lambda > 0$ and the numerator $1 + \mathcal{O}(d^{-\lambda}) \leq 2$. Ech such vector constructed, has an important feature that large number of its components are zero and the non-zero components are of equal magnitude. Our techniques are based on combinatorial structures related to Resolvable Block Deisgns (RBDs), that are used extensively in statistical designs. We show that for several composite dimensions $d$, one can construct $\mathcal{O}(\sqrt{d})$ many APMUBs, in which cases the number of MUBs are significantly small. To be specific, this result works for $d$ of the form $(q-e)(q+f)$, $q$, $e$, $f \mathbb{N}$, with the conditions $0\leq f \leq e$ for constant $e$, $f$ and $q$ some power of prime. We also show that such APMUBs provide sets of Bi-angular vecotrs which are of the order of $\mathcal{O}(d^{\frac{3}{2}})$ in numbers, having high angular distances among them. Finally, as the MUBs are equivalent to aset of Hadamard matrices, we show that the APMUBs are so with the set of Weighing matrices.
+</div>
+</details>
+<a class="rk-pill rk-external"
+    href="https://link.springer.com/article/10.1007/s42519-024-00414-2"
+    target="_blank" rel="noopener noreferrer">Journal</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+
+<!-- 2022 -->
+<div class="rk-group">
+
+<div class="rk-year">2022</div>
+
+<div class="rk-items">
+
+<article class="rk-item">
+<div class="rk-left"><span class="rk-tag">AMUBs</span></div>
+<div class="rk-body">
+<h3 class="rk-title">A Heuristic Framework to Search for Approximate Mutally Unbiased Bases</h3>
+<div class="rk-meta">
+Sreejit Chaudhury, Ajeet Kumar, Subhamoy Maitra, <strong>Somjit Roy</strong>, and Sourav Sen Gupta
+<span class="rk-status"><em></em>In Cyber Security, Cryptology, and Machine Learning</span>
+</div>
+<div class="rk-pills">
+<!--<details class="rk-details">
+<summary class="rk-pill">Awards</summary>
+<ul class="rk-awards"><li>🥈 Silver Prize – 2024 SETCASA Poster Session</li></ul>
+</details>-->
+<details class="rk-details">
+<summary class="rk-pill">Abstract</summary>
+<div class="rk-abstract">
+Mutually Unbiased Bases (MUBs) have varied applications in quantum information. However, obtaining the optimal number of MUBs is a challenging problem for different dimensions. The problem has received serious attention for several decades and still number of questions are unsolved in this domain. As optimal number of MUBs may not always be available for different composite dimensions, Approximate MUBs (AMUBs) received serious attention in recent time. In this paper, we present a heuristic to obtain AMUBs with significantly good parameters. Given a non-prime dimension $d$, we note the closest prime $d' > d$ and form $d'+1$ MUBs through the existing methods. Then our proposed idea is (i) to apply basis reduction techniques (that are well studied in Machine Learning literature) in obtaining the initial solutions, and finally (ii) to exploit the steepest ascent kind of search to achieve further improved results. The efficacy of our technique is shown through construction of AMUBs in dimensions $d = 6, 10, 46$ from $d' = 7, 11$ and $47$ respectively. Our technique provides a novel framework in construction of AMUBs that can be refined in a case-specific manner. From a kore general view, this approach considers approximately solving a challenge (where efficient deterministic algorithms are not known) mathematical problem in discrete domainthrough state-of-the-art heuristic ideas.
+</div>
+</details>
+<a class="rk-pill rk-external"
+    href="https://link.springer.com/chapter/10.1007/978-3-031-07689-3_16"
+    target="_blank" rel="noopener noreferrer">Proceedings</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+
+<!-- Ongoing -->
+<div class="rk-group">
+<div class="rk-year">Ongoing</div>
+<div class="rk-items">
+
+<!-- Paper 1 -->
+<article class="rk-item">
+<!-- <div class="rk-left"><span class="rk-tag">TAVIE-SVG</span></div> -->
+<div class="rk-body">
+<h3 class="rk-title">A Tangent Approximation based Variational Inference Framework for Identifying Spatially Varying Gene Expressions</h3>
+<div class="rk-meta">
+<strong>Somjit Roy</strong>, Pritam Dey, Debdeep Pati, and Bani K. Mallick
+<span class="rk-status"><em>In preparation</em></span>
+</div>
+
+<!-- <div class="rk-pills"> -->
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Abstract</summary>
+  <div class="rk-abstract">The advent of Scientific Machine Learning has heralded a transformative era in scientific discovery, driving progress across diverse domains. Central to this progress is uncovering scientific laws from experimental data through symbolic regression. However, existing approaches are dominated by heuristic algorithms or data-hungry black-box methods, which often demand low-noise settings and lack principled uncertainty quantification. Motivated by interpretable Statistical Artificial Intelligence, we develop a hierarchical Bayesian framework for symbolic regression that represents scientific laws as ensembles of tree-structured symbolic expressions endowed with a regularized tree prior. This coherent probabilistic formulation enables full posterior inference via an efficient Markov chain Monte Carlo algorithm, yielding a balance between predictive accuracy and structural parsimony. To guide symbolic model selection, we develop a marginal posterior–based criterion adhering to the Occam’s window principle and further quantify structural fidelity to ground truth through a tailored expression-distance metric. On the theoretical front, we establish near-minimax rate of Bayesian posterior concentration, providing the first rigorous guarantee in context of symbolic regression. Empirical evaluation demonstrates robust performance of our proposed methodology against state-of-the-art competing modules on a simulated example, a suite of canonical Feynman equations, and single-atom catalysis dataset.</div>
+</details> -->
+<!-- <a class="rk-pill rk-external"
+    href="https://arxiv.org/abs/2509.19710"
+    target="_blank" rel="noopener noreferrer">arXiv</a> -->
+
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Awards</summary>
+  <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
+  <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
+</details> -->
+<!-- </div> -->
+</div>
+</article>
+
+<!-- Paper 2 -->
+<article class="rk-item">
+<!-- <div class="rk-left"><span class="rk-tag">PINO</span></div> -->
+<div class="rk-body">
+<h3 class="rk-title">Scientifically Guided Inference for Physics-Informed Neural Operators</h3>
+<div class="rk-meta">
+<strong>Somjit Roy</strong>, Anirban Bhattacharya, and Debdeep Pati
+<span class="rk-status"><em>In preparation</em></span>
+</div>
+
+<!-- <div class="rk-pills"> -->
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Abstract</summary>
+  <div class="rk-abstract">The advent of Scientific Machine Learning has heralded a transformative era in scientific discovery, driving progress across diverse domains. Central to this progress is uncovering scientific laws from experimental data through symbolic regression. However, existing approaches are dominated by heuristic algorithms or data-hungry black-box methods, which often demand low-noise settings and lack principled uncertainty quantification. Motivated by interpretable Statistical Artificial Intelligence, we develop a hierarchical Bayesian framework for symbolic regression that represents scientific laws as ensembles of tree-structured symbolic expressions endowed with a regularized tree prior. This coherent probabilistic formulation enables full posterior inference via an efficient Markov chain Monte Carlo algorithm, yielding a balance between predictive accuracy and structural parsimony. To guide symbolic model selection, we develop a marginal posterior–based criterion adhering to the Occam’s window principle and further quantify structural fidelity to ground truth through a tailored expression-distance metric. On the theoretical front, we establish near-minimax rate of Bayesian posterior concentration, providing the first rigorous guarantee in context of symbolic regression. Empirical evaluation demonstrates robust performance of our proposed methodology against state-of-the-art competing modules on a simulated example, a suite of canonical Feynman equations, and single-atom catalysis dataset.</div>
+</details> -->
+<!-- <a class="rk-pill rk-external"
+    href="https://arxiv.org/abs/2509.19710"
+    target="_blank" rel="noopener noreferrer">arXiv</a> -->
+
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Awards</summary>
+  <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
+  <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
+</details> -->
+<!-- </div> -->
+</div>
+</article>
+
+<!-- Paper 3 -->
+<article class="rk-item">
+<!-- <div class="rk-left"><span class="rk-tag">SPINWAVE</span></div> -->
+<div class="rk-body">
+<h3 class="rk-title">Scalable Physics-Informed Neural Operator for Seismic Wave Modeling</h3>
+<div class="rk-meta">
+<strong>Somjit Roy</strong>, Kai Gao, and Ting Chen
+<span class="rk-status"><em>In preparation</em></span>
+</div>
+
+<!-- <div class="rk-pills"> -->
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Abstract</summary>
+  <div class="rk-abstract">The advent of Scientific Machine Learning has heralded a transformative era in scientific discovery, driving progress across diverse domains. Central to this progress is uncovering scientific laws from experimental data through symbolic regression. However, existing approaches are dominated by heuristic algorithms or data-hungry black-box methods, which often demand low-noise settings and lack principled uncertainty quantification. Motivated by interpretable Statistical Artificial Intelligence, we develop a hierarchical Bayesian framework for symbolic regression that represents scientific laws as ensembles of tree-structured symbolic expressions endowed with a regularized tree prior. This coherent probabilistic formulation enables full posterior inference via an efficient Markov chain Monte Carlo algorithm, yielding a balance between predictive accuracy and structural parsimony. To guide symbolic model selection, we develop a marginal posterior–based criterion adhering to the Occam’s window principle and further quantify structural fidelity to ground truth through a tailored expression-distance metric. On the theoretical front, we establish near-minimax rate of Bayesian posterior concentration, providing the first rigorous guarantee in context of symbolic regression. Empirical evaluation demonstrates robust performance of our proposed methodology against state-of-the-art competing modules on a simulated example, a suite of canonical Feynman equations, and single-atom catalysis dataset.</div>
+</details> -->
+<!-- <a class="rk-pill rk-external"
+    href="https://arxiv.org/abs/2509.19710"
+    target="_blank" rel="noopener noreferrer">arXiv</a> -->
+
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Awards</summary>
+  <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
+  <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
+</details> -->
+<!-- </div> -->
+</div>
+</article>
+
+<!-- Paper 4 -->
+<article class="rk-item">
+<!-- <div class="rk-left"><span class="rk-tag">mHierBOSSS</span></div> -->
+<div class="rk-body">
+<h3 class="rk-title">Multi-Property Materials Discovery using Multivariate HierBOSSS</h3>
+<div class="rk-meta">
+<strong>Somjit Roy</strong>, Pritam Dey, Debdeep Pati, Bani K. Mallick, and Raymundo Arr&oacute;yave
+<span class="rk-status"><em>In preparation</em></span>
+</div>
+
+<!-- <div class="rk-pills"> -->
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Abstract</summary>
+  <div class="rk-abstract">The advent of Scientific Machine Learning has heralded a transformative era in scientific discovery, driving progress across diverse domains. Central to this progress is uncovering scientific laws from experimental data through symbolic regression. However, existing approaches are dominated by heuristic algorithms or data-hungry black-box methods, which often demand low-noise settings and lack principled uncertainty quantification. Motivated by interpretable Statistical Artificial Intelligence, we develop a hierarchical Bayesian framework for symbolic regression that represents scientific laws as ensembles of tree-structured symbolic expressions endowed with a regularized tree prior. This coherent probabilistic formulation enables full posterior inference via an efficient Markov chain Monte Carlo algorithm, yielding a balance between predictive accuracy and structural parsimony. To guide symbolic model selection, we develop a marginal posterior–based criterion adhering to the Occam’s window principle and further quantify structural fidelity to ground truth through a tailored expression-distance metric. On the theoretical front, we establish near-minimax rate of Bayesian posterior concentration, providing the first rigorous guarantee in context of symbolic regression. Empirical evaluation demonstrates robust performance of our proposed methodology against state-of-the-art competing modules on a simulated example, a suite of canonical Feynman equations, and single-atom catalysis dataset.</div>
+</details> -->
+<!-- <a class="rk-pill rk-external"
+    href="https://arxiv.org/abs/2509.19710"
+    target="_blank" rel="noopener noreferrer">arXiv</a> -->
+
+<!-- <details class="rk-details">
+  <summary class="rk-pill">Awards</summary>
+  <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
+  <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
+</details> -->
+<!-- </div> -->
+</div>
+</article>
+
+  </div>
 </div>
 
 </section>

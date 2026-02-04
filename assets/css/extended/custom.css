@@ -865,3 +865,981 @@ html:has(head link[rel="canonical"][href$="/research/"]) .post-single .post-cont
   border-left: none !important;
   padding-left: 0 !important;
 }
+
+/* ---- */
+
+/* =========================================================
+   FANCY PACK (CSS-only)
+   Paste at END of custom.css
+   ========================================================= */
+
+/* ---------- 0) Gentle site-wide smoothing ---------- */
+:root{
+  --nk-shadow: 0 10px 30px rgba(17,24,39,.06);
+  --nk-shadow-sm: 0 8px 18px rgba(17,24,39,.07);
+}
+body.dark{
+  --nk-shadow: 0 10px 30px rgba(0,0,0,.35);
+  --nk-shadow-sm: 0 8px 18px rgba(0,0,0,.30);
+}
+
+/* ---------- 1) “Ink” hover for cards: soft lift + glow ---------- */
+.post-entry,
+.first-entry,
+.entry,
+.archive-entry{
+  transition: transform .16s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.post-entry:hover,
+.entry:hover,
+.archive-entry:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--nk-shadow);
+  border-color: color-mix(in srgb, var(--nk-accent) 24%, transparent) !important;
+}
+body.dark .post-entry:hover,
+body.dark .entry:hover,
+body.dark .archive-entry:hover{
+  box-shadow: var(--nk-shadow);
+  border-color: color-mix(in srgb, #ddd8d8 22%, transparent) !important;
+}
+
+/* ---------- 2) Title hover polish (like a journal) ---------- */
+.post-entry .entry-header h2,
+.post-entry .entry-header h1{
+  transition: letter-spacing .18s ease, color .18s ease;
+}
+.post-entry:hover .entry-header h2,
+.post-entry:hover .entry-header h1{
+  letter-spacing: -0.018em;
+  color: var(--nk-accent);
+}
+body.dark .post-entry:hover .entry-header h2,
+body.dark .post-entry:hover .entry-header h1{
+  color: #ddd8d8;
+}
+
+/* ---------- 3) Fancy selection highlight (text selection) ---------- */
+::selection{
+  background: color-mix(in srgb, var(--nk-accent) 26%, transparent);
+}
+body.dark ::selection{
+  background: color-mix(in srgb, #ddd8d8 22%, transparent);
+}
+
+/* ---------- 4) “Magazine” rule under H1 on single pages ---------- */
+.post-single .post-title{
+  position: relative;
+  padding-bottom: .65rem;
+}
+.post-single .post-title::after{
+  content:"";
+  display:block;
+  height: 2px;
+  width: 96px;
+  margin-top: .65rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--nk-accent) 70%, transparent),
+    color-mix(in srgb, var(--nk-accent) 18%, transparent)
+  );
+}
+body.dark .post-single .post-title::after{
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #ddd8d8 70%, transparent),
+    color-mix(in srgb, #ddd8d8 18%, transparent)
+  );
+}
+
+/* ---------- 5) Better inline code (less “blocky”, more premium) ---------- */
+.post-content :not(pre) > code{
+  border: 1px solid color-mix(in srgb, var(--nk-line) 70%, transparent);
+  background: color-mix(in srgb, var(--nk-ink) 4%, transparent);
+  padding: .16em .45em;
+  border-radius: 999px;
+}
+body.dark .post-content :not(pre) > code{
+  border-color: color-mix(in srgb, var(--nk-line) 85%, transparent);
+  background: color-mix(in srgb, #fff 6%, transparent);
+}
+
+/* ---------- 6) Pre blocks: subtle top bar (terminal vibe) ---------- */
+.post-content pre{
+  position: relative;
+  padding-top: 1.15rem; /* makes room for bar */
+}
+.post-content pre::before{
+  content:"";
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  border-top-left-radius: var(--nk-radius);
+  border-top-right-radius: var(--nk-radius);
+  background: color-mix(in srgb, var(--nk-ink) 6%, transparent);
+}
+body.dark .post-content pre::before{
+  background: color-mix(in srgb, #fff 7%, transparent);
+}
+
+/* ---------- 7) Images: soft frame + gentle hover ---------- */
+.post-content img{
+  border-radius: 16px;
+  border: 1px solid var(--nk-line);
+  box-shadow: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.post-content img:hover{
+  transform: translateY(-1px);
+  box-shadow: var(--nk-shadow-sm);
+}
+
+/* ---------- 8) Tables: modern zebra rows + sticky header ---------- */
+.post-content table{
+  width: 100%;
+}
+.post-content thead th{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.post-content tbody tr:nth-child(odd){
+  background: color-mix(in srgb, var(--nk-ink) 2.2%, transparent);
+}
+body.dark .post-content tbody tr:nth-child(odd){
+  background: color-mix(in srgb, #fff 3.2%, transparent);
+}
+
+/* ---------- 9) TOC: make it feel like a “side note” ---------- */
+.toc{
+  border: 1px solid var(--nk-line) !important;
+  border-radius: var(--nk-radius) !important;
+  padding: .9rem 1rem !important;
+  background: color-mix(in srgb, var(--nk-ink) 2.5%, transparent) !important;
+}
+body.dark .toc{
+  background: color-mix(in srgb, #fff 4.5%, transparent) !important;
+}
+.toc a{
+  font-weight: 560;
+}
+
+/* ---------- 10) Smooth interactions for users who allow motion ---------- */
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior: smooth; }
+}
+
+/* =========================================================
+   === ADD-ON: Fancy upgrades (append at END of custom.css) ===
+   Keep your existing CSS unchanged above this block.
+   ========================================================= */
+
+/* 1) Paper grain background (very subtle) */
+body{
+  background-image:
+    radial-gradient(rgba(17,24,39,.018) 1px, transparent 1px),
+    radial-gradient(rgba(17,24,39,.010) 1px, transparent 1px);
+  background-position: 0 0, 18px 18px;
+  background-size: 36px 36px;
+}
+body.dark{
+  background-image:
+    radial-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,.008) 1px, transparent 1px);
+}
+
+/* 2) “Luxury” nav: pill hover + active highlight */
+#menu a{
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  transition: background .18s ease, transform .18s ease;
+}
+#menu a:hover{
+  background: color-mix(in srgb, var(--nk-accent) 10%, transparent);
+  transform: translateY(-1px);
+}
+body.dark #menu a:hover{
+  background: color-mix(in srgb, #ddd8d8 10%, transparent);
+}
+#menu a span.active{
+  padding: .15rem .25rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--nk-accent) 12%, transparent);
+}
+body.dark #menu a span.active{
+  background: color-mix(in srgb, #ddd8d8 12%, transparent);
+}
+
+/* 3) Upgrade underline to “ink-stroke” gradient (keeps your animation) */
+.profile-mode a:not(:has(svg)):not(.button)::after,
+.profile a:not(:has(svg)):not(.button)::after,
+.home-info a:not(:has(svg)):not(.button)::after,
+#profile a:not(:has(svg)):not(.button)::after,
+.post-content a:not(:has(svg)):not(.button)::after,
+.post-entry a:not(:has(svg)):not(.button)::after{
+  height: 2.5px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--nk-accent) 75%, transparent),
+    color-mix(in srgb, var(--nk-accent) 20%, transparent)
+  );
+}
+body.dark .profile-mode a:not(:has(svg)):not(.button)::after,
+body.dark .profile a:not(:has(svg)):not(.button)::after,
+body.dark .home-info a:not(:has(svg)):not(.button)::after,
+body.dark #profile a:not(:has(svg)):not(.button)::after,
+body.dark .post-content a:not(:has(svg)):not(.button)::after,
+body.dark .post-entry a:not(:has(svg)):not(.button)::after{
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #ddd8d8 75%, transparent),
+    color-mix(in srgb, #ddd8d8 20%, transparent)
+  );
+}
+
+/* 4) Section markers for H2 (journal-style) */
+.post-content h2{
+  position: relative;
+  padding-left: .2rem;
+}
+.post-content h2::before{
+  content:"";
+  position:absolute;
+  left: -1.05rem;
+  top: .55em;
+  width: .5rem;
+  height: .5rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--nk-accent) 65%, transparent);
+}
+body.dark .post-content h2::before{
+  background: color-mix(in srgb, #ddd8d8 60%, transparent);
+}
+@media (max-width: 680px){
+  .post-content h2::before{ display:none; }
+}
+
+/* 5) “Glassy” research tags (rk-tag) */
+.rk-tag{
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: color-mix(in srgb, var(--rk-accent) 12%, rgba(255,255,255,.55));
+}
+body.dark .rk-tag{
+  background: color-mix(in srgb, #ddd8d8 10%, rgba(10,12,16,.45));
+}
+
+/* 6) Paragraph rhythm on single pages (subtle dividers) */
+.post-single .post-content p + p{
+  margin-top: 1.05rem;
+}
+.post-single .post-content p + p::before{
+  content:"";
+  display:block;
+  height: 1px;
+  width: 40px;
+  margin: .25rem 0 .85rem;
+  background: color-mix(in srgb, var(--nk-line) 85%, transparent);
+  border-radius: 999px;
+}
+
+/* 7) Blockquote watermark (extra classy) */
+.post-content blockquote{
+  position: relative;
+  overflow: hidden;
+}
+.post-content blockquote::after{
+  content:"“";
+  position:absolute;
+  right: 14px;
+  top: -10px;
+  font-size: 5rem;
+  font-weight: 800;
+  opacity: .10;
+  color: var(--nk-accent);
+  pointer-events:none;
+}
+body.dark .post-content blockquote::after{
+  color:#ddd8d8;
+  opacity: .10;
+}
+
+/* 8) Refined list bullets (footnote-style) */
+.post-content ul{
+  list-style: none;
+  padding-left: 1.1rem;
+}
+.post-content ul li{
+  position: relative;
+  margin: .45rem 0;
+}
+.post-content ul li::before{
+  content:"";
+  position:absolute;
+  left: -1.05rem;
+  top: .62em;
+  width: .38rem;
+  height: .38rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--nk-accent) 55%, transparent);
+}
+body.dark .post-content ul li::before{
+  background: color-mix(in srgb, #ddd8d8 52%, transparent);
+}
+
+/* 9) Optional: smoother in-page navigation */
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior: smooth; }
+}
+
+/* =========================================================
+   UPDATES (from Research blurb hover + News styling + Research hover cards)
+   Paste at END of custom.css
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   0) Shared “ink-stroke” gradient (matches your underline)
+   --------------------------------------------------------- */
+   :root{
+    --nk-inkgrad: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--nk-accent) 75%, transparent),
+      color-mix(in srgb, var(--nk-accent) 20%, transparent)
+    );
+  }
+  body.dark{
+    --nk-inkgrad: linear-gradient(
+      90deg,
+      color-mix(in srgb, #ddd8d8 75%, transparent),
+      color-mix(in srgb, #ddd8d8 20%, transparent)
+    );
+  }
+  
+  /* =========================================================
+     1) RESEARCH BLURB — fancy border (same gradient) + hover
+     Requires your blurb wrapper like: <div class="rk-intro">...</div>
+     ========================================================= */
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-intro{
+    position: relative;
+    border: none !important;
+    border-radius: 16px;
+    padding: 1.05rem 1.15rem;
+    background: color-mix(in srgb, var(--nk-paper) 92%, white);
+    box-shadow: none;
+    transition: transform .16s ease, box-shadow .18s ease;
+    overflow: hidden;
+  }
+  
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-intro::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding: 2px;
+    border-radius: inherit;
+    background: var(--nk-inkgrad);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events:none;
+  }
+  
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-intro > *{
+    position: relative;
+    z-index: 1;
+  }
+  
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-intro:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--nk-shadow, 0 10px 30px rgba(17,24,39,.06));
+  }
+  
+  /* =========================================================
+     2) RESEARCH CARDS — same gradient border + hover lift
+     ========================================================= */
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-item{
+    position: relative;
+    border: none !important;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .16s ease, box-shadow .18s ease;
+  }
+  
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-item::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding: 2px;
+    border-radius: inherit;
+    background: var(--nk-inkgrad);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events:none;
+  }
+  
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-item > *{
+    position: relative;
+    z-index: 1;
+  }
+  
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-item:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--nk-shadow, 0 10px 30px rgba(17,24,39,.06));
+  }
+  
+  /* Optional: keep pills from looking clipped inside bordered cards */
+  html:has(head link[rel="canonical"][href$="/research/"]) .rk-pills{
+    margin-top: .65rem;
+  }
+  
+  /* =========================================================
+     3) NEWS PAGE — no side rail, no bullets, matches site style
+     Applies only on /news/
+     ========================================================= */
+  
+  /* Turn OFF your global editorial left rail only on /news/ */
+  html:has(head link[rel="canonical"][href$="/news/"]) .post-content{
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+  
+  /* News container */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-accord{
+    --ns-accent: var(--nk-accent);
+    --ns-muted: color-mix(in srgb, currentColor 60%, transparent);
+    font-size: 1.02rem;
+    line-height: 1.5;
+    margin-top: .75rem;
+  }
+  
+  /* Year block — clean, no rails */
+  html:has(head link[rel="canonical"][href$="/news/"]) details.ns-year{
+    border: none !important;
+    background: transparent !important;
+    margin: 0 0 1.05rem !important;
+    padding: 0 !important;
+  }
+  
+  /* Year header */
+  html:has(head link[rel="canonical"][href$="/news/"]) details.ns-year > summary{
+    list-style: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .25rem .5rem;
+    border-radius: 999px;
+    transition: background .18s ease, transform .18s ease;
+  }
+  html:has(head link[rel="canonical"][href$="/news/"]) details.ns-year > summary::-webkit-details-marker{
+    display:none;
+  }
+  
+  /* Hover on year summary: same soft “ink” effect */
+  html:has(head link[rel="canonical"][href$="/news/"]) details.ns-year > summary:hover{
+    background: color-mix(in srgb, var(--nk-accent) 10%, transparent);
+    transform: translateY(-1px);
+  }
+  body.dark
+  html:has(head link[rel="canonical"][href$="/news/"]) details.ns-year > summary:hover{
+    background: color-mix(in srgb, #ddd8d8 10%, transparent);
+  }
+  
+  /* Year label */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-yearlabel{
+    font-weight: 850;
+    font-size: 1.25rem;
+    letter-spacing: .02em;
+    color: var(--ns-accent);
+  }
+  body.dark
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-yearlabel{
+    color: #ddd8d8;
+  }
+  
+  /* NO bullets, NO rail — use card rows instead */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-list{
+    list-style: none !important;
+    padding: 0 !important;
+    margin: .6rem 0 0 !important;
+  }
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-list::before,
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-list li::before{
+    content: none !important; /* kills rail + dots */
+  }
+  
+  /* Each news row as a “mini card” */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-list li{
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: .75rem;
+    align-items: start;
+    padding: .75rem .9rem;
+    margin: .6rem 0;
+    border-radius: 14px;
+    border: 1px solid var(--nk-line);
+    background: color-mix(in srgb, var(--nk-paper) 92%, white);
+    transition: transform .16s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  
+  /* Hover: same style feel as research cards */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-list li:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--nk-shadow, 0 10px 30px rgba(17,24,39,.06));
+    border-color: color-mix(in srgb, var(--nk-accent) 24%, transparent);
+  }
+  body.dark
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-list li:hover{
+    border-color: color-mix(in srgb, #ddd8d8 22%, transparent);
+  }
+  
+  /* Month column */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-month{
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: color-mix(in srgb, currentColor 60%, transparent);
+    padding-top: .05rem;
+  }
+  
+  /* Body text */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body{
+    color: color-mix(in srgb, currentColor 86%, transparent);
+  }
+  
+  /* Links inside news: match your underline animation (no double underline) */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a{
+    color: inherit;
+    text-decoration: none !important;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+  }
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-2px;
+    width:100%;
+    height:2.5px;
+    border-radius: 999px;
+    background: var(--nk-inkgrad);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+    pointer-events:none;
+  }
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:hover{
+    color: var(--nk-accent);
+  }
+  body.dark
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:hover{
+    color: #ddd8d8;
+  }
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:hover::after{
+    transform: scaleX(1);
+  }
+  
+  /* Mobile tweaks */
+  @media (max-width:680px){
+    html:has(head link[rel="canonical"][href$="/news/"]) .ns-list li{
+      grid-template-columns: 44px 1fr;
+      padding: .7rem .8rem;
+    }
+  }
+
+  /* =========================================================
+   RESEARCH CARDS — match NEWS cards
+   Same border color, same hover lift, same visual language
+   ========================================================= */
+
+/* Base research card = same as news card */
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-item{
+  position: relative;
+  border-radius: 14px;                  /* same as news */
+  border: 1px solid var(--nk-line) !important;
+  background: color-mix(in srgb, var(--nk-paper) 92%, white);
+  box-shadow: none;
+  overflow: hidden;
+
+  transition:
+    transform .16s ease,
+    box-shadow .18s ease,
+    border-color .18s ease;
+}
+
+/* Kill any older decorative borders / rails */
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-item::before,
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-item::after{
+  content: none !important;
+  display: none !important;
+}
+
+/* Hover = identical to news card hover */
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-item:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--nk-shadow, 0 10px 30px rgba(17,24,39,.06));
+  border-color: color-mix(in srgb, var(--nk-accent) 24%, transparent) !important;
+}
+
+/* Dark mode parity */
+body.dark
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-item{
+  background: color-mix(in srgb, var(--nk-paper) 88%, black);
+}
+
+body.dark
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-item:hover{
+  border-color: color-mix(in srgb, #ddd8d8 22%, transparent) !important;
+}
+
+/* Slight spacing polish inside cards */
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-body{
+  padding: .05rem 0;
+}
+
+/* Pills sit comfortably inside the card */
+html:has(head link[rel="canonical"][href$="/research/"]) .rk-pills{
+  margin-top: .6rem;
+}
+
+/* =========================================================
+   NEWS (ns-accord): clear "click to expand" affordance
+   - adds chevron
+   - adds "Click to expand" hint when closed
+   - hint is bold + underlined in your accent color
+   - underline uses same accent tone as your hover underline animation
+   ========================================================= */
+
+/* 0) Ensure the year summary is visually clickable */
+.post-content .ns-accord details.ns-year > summary{
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: .35rem 2.0rem .35rem 0;   /* room for chevron */
+  border-radius: 12px;
+  transition: background .18s ease, transform .18s ease;
+}
+
+/* subtle hover */
+.post-content .ns-accord details.ns-year > summary:hover{
+  background: color-mix(in srgb, var(--nk-accent, #500000) 6%, transparent);
+  transform: translateY(-1px);
+}
+body.dark .post-content .ns-accord details.ns-year > summary:hover{
+  background: color-mix(in srgb, #ddd8d8 8%, transparent);
+}
+
+/* 1) Chevron indicator (always visible) */
+.post-content .ns-accord details.ns-year > summary::after{
+  content:"▾";
+  position:absolute;
+  right: .25rem;
+  top: 50%;
+  transform: translateY(-52%) rotate(0deg);
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--ns-accent);
+  opacity: .85;
+  transition: transform .22s ease, opacity .22s ease;
+}
+.post-content .ns-accord details.ns-year:not([open]) > summary::after{
+  transform: translateY(-52%) rotate(-90deg);
+  opacity: .75;
+}
+
+/* 2) "Click to expand" hint when CLOSED */
+.post-content .ns-accord details.ns-year:not([open]) .ns-yearlabel{
+  position: relative;
+  padding-right: .35rem;
+}
+
+/* Hint text (shown only when closed) */
+.post-content .ns-accord details.ns-year:not([open]) .ns-yearlabel::after{
+  content:" ";
+  font-weight: 800;
+  opacity: .85;
+  margin-left: .35rem;
+
+  /* underline in same accent color as your hover underline animation */
+  text-decoration-line: underline;
+  text-decoration-thickness: 2.5px;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--nk-accent, #500000);
+
+  color: var(--nk-accent, #500000);
+}
+
+/* Dark mode hint */
+body.dark .post-content .ns-accord details.ns-year:not([open]) .ns-yearlabel::after{
+  color: #ddd8d8;
+  text-decoration-color: #ddd8d8;
+}
+
+/* 3) When OPEN, keep label clean (no hint underline) */
+.post-content .ns-accord details.ns-year[open] .ns-yearlabel::after{
+  content: none !important;
+}
+
+/* 4) Make the year itself feel "active" on hover */
+.post-content .ns-accord details.ns-year > summary:hover .ns-yearlabel{
+  color: var(--nk-accent, #500000);
+}
+body.dark .post-content .ns-accord details.ns-year > summary:hover .ns-yearlabel{
+  color: #ddd8d8;
+}
+
+
+/* =========================================================
+   NEWS FIXES
+   1) Bold ONLY hyperlink text inside news cards
+   2) Keep hover underline color/effect
+   3) Remove "[open]" text and replace with a small symbol
+   ========================================================= */
+
+
+/* ---------- 1) Bold hyperlinks, keep hover underline behavior ---------- */
+.post-content .ns-body a,
+.post-content .ns-body a:link,
+.post-content .ns-body a:visited{
+  font-weight: 750 !important;            /* bold hyperlink text only */
+  color: var(--ns-accent) !important;     /* keep the same accent color */
+  text-decoration: none !important;
+  border-bottom: none !important;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+/* underline matches your hover animation color (uses same accent) */
+.post-content .ns-body a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:100%;
+  height:2.5px;
+  border-radius:999px;
+  background: var(--ns-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+  pointer-events:none;
+}
+
+.post-content .ns-body a:hover::after{
+  transform: scaleX(1);
+}
+
+.post-content .ns-body a:hover{
+  color: var(--ns-accent) !important;     /* stays same color on hover */
+}
+
+/* dark mode accent stays creamy */
+body.dark .post-content .ns-body a::after{
+  background: #ddd8d8;
+}
+body.dark .post-content .ns-body a,
+body.dark .post-content .ns-body a:hover{
+  color: #ddd8d8 !important;
+}
+
+
+/* ---------- 2) Remove the "[open]" text completely ---------- */
+.post-content .ns-openhint{
+  display: none !important;
+}
+
+
+/* ---------- 3) Add a small expand/collapse symbol next to year ---------- */
+/* Ensure summary aligns nicely */
+.post-content details.ns-year > summary{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .55rem !important;                 /* spacing from year label */
+  cursor: pointer;
+}
+
+/* Small symbol (chevron) */
+.post-content details.ns-year > summary::after{
+  content: "›";                           /* small, clean symbol */
+  display: inline-block;
+  font-size: .95em;
+  opacity: .55;
+  transform: rotate(0deg) translateY(1px);
+  transition: transform .22s ease, opacity .22s ease;
+  color: var(--ns-accent);
+}
+
+/* Open state rotates down */
+.post-content details.ns-year[open] > summary::after{
+  transform: rotate(90deg) translateY(1px);
+  opacity: .85;
+}
+
+/* Hover makes it slightly clearer */
+.post-content details.ns-year > summary:hover::after{
+  opacity: 1;
+}
+
+/* Dark mode symbol */
+body.dark .post-content details.ns-year > summary::after{
+  color: #ddd8d8;
+}
+
+/* =========================================================
+   NEWS: inline hyperlinks match ABOUT-page underline pattern
+   - uses background-size animation (not ::after)
+   - bold links only
+   - kills older ns-body a::after rules
+   ========================================================= */
+
+   html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a{
+    display: inline;
+    position: relative;
+    text-decoration: none !important;
+    color: inherit !important;
+  
+    /* bold only for links */
+    font-weight: 750 !important;
+  
+    /* same underline "gap" strategy as About */
+    padding-bottom: 3px;
+    background-origin: content-box;
+  
+    /* same animated underline (light mode) */
+    background-image: linear-gradient(var(--nk-accent, #500000), var(--nk-accent, #500000));
+    background-repeat: no-repeat;
+    background-position: 0 118%;
+    background-size: 0% 2.4px;
+  
+    transition: background-size .30s ease, color .18s ease;
+  }
+  
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:hover{
+    background-size: 100% 2.4px;
+    color: var(--nk-accent, #500000) !important;
+  }
+  
+  /* Prevent double underline from your earlier News rules */
+  html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a::after{
+    content: none !important;
+  }
+  
+  /* Dark mode matches About: creamy underline + hover color */
+  body.dark html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a{
+    background-image: linear-gradient(#ddd8d8, #ddd8d8);
+  }
+  
+  body.dark html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:hover{
+    color: #ddd8d8 !important;
+  }
+  
+  /* =========================================================
+   NEWS: kill any legacy underline + use SAME gradient underline
+   as About-page hover animation
+   (paste at VERY END of custom.css)
+   ========================================================= */
+
+/* Define the exact "ink-stroke" gradient used elsewhere (safe if already defined) */
+:root{
+  --nk-inkgrad: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--nk-accent) 75%, transparent),
+    color-mix(in srgb, var(--nk-accent) 20%, transparent)
+  );
+}
+body.dark{
+  --nk-inkgrad: linear-gradient(
+    90deg,
+    color-mix(in srgb, #ddd8d8 75%, transparent),
+    color-mix(in srgb, #ddd8d8 20%, transparent)
+  );
+}
+
+/* Force NEWS links to use background-underline (no purple border/decoration) */
+html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a,
+html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:link,
+html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:visited{
+  display: inline;
+  position: relative;
+
+  /* remove all legacy underlines (this is what causes the purple line) */
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  -webkit-text-decoration: none !important;
+
+  /* ensure visited doesn't turn purple */
+  color: inherit !important;
+  -webkit-text-fill-color: currentColor;
+
+  /* bold only hyperlink text */
+  font-weight: 750 !important;
+
+  /* About-style underline gap */
+  padding-bottom: 3px;
+  background-origin: content-box;
+
+  /* SAME gradient as About */
+  background-image: var(--nk-inkgrad);
+  background-repeat: no-repeat;
+  background-position: 0 118%;
+  background-size: 0% 2.5px;
+
+  transition: background-size .30s ease, color .18s ease;
+}
+
+/* Hover: grow the gradient underline (same as About) */
+html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:hover{
+  background-size: 100% 2.5px;
+  color: var(--nk-accent) !important;
+}
+body.dark html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a:hover{
+  color: #ddd8d8 !important;
+}
+
+/* Kill any older ::after underline animations on news links */
+html:has(head link[rel="canonical"][href$="/news/"]) .ns-body a::after{
+  content: none !important;
+  display: none !important;
+}
+
+  /* =========================================================
+   CONTACT — hero blurb hover effect (matches cards + research)
+   ========================================================= */
+
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-hero{
+  transition:
+    transform .16s ease,
+    box-shadow .18s ease,
+    border-color .18s ease;
+}
+
+/* Hover lift + shadow */
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-hero:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--ct-shadow, 0 10px 30px rgba(17,24,39,.06));
+  border-color: color-mix(in srgb, var(--ct-accent) 24%, transparent);
+}
+
+/* Dark mode parity */
+body.dark
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-hero:hover{
+  border-color: color-mix(in srgb, #ddd8d8 22%, transparent);
+}
+
+
+
+
+
+  
+  
+
