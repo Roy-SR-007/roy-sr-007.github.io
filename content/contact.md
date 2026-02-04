@@ -7,8 +7,8 @@ description: "How to reach me — email, office, and a quick map."
 slug: "contact"
 ---
 <h1 class="title-wave">
-  Get in Touch
-  <img class="wave-emoji" src="/img/waving_hand_animated_default.png" alt="Waving hand" width="60" height="60">
+  Say Hello
+  <!--<img class="wave-emoji" src="/img/waving_hand_animated_default.png" alt="Waving hand" width="60" height="60">-->
 </h1>
 
 <style>
@@ -164,7 +164,7 @@ slug: "contact"
   <svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg> EMAIL
 </h3>
 
-<span style="font-family: monospace;">niladrik[at]tamu[dot]edu</span>
+<span style="font-family: monospace;">sroy_123[at]tamu[dot]edu</span>
 
 </div>
 
@@ -175,8 +175,9 @@ slug: "contact"
   </h3>
 
   
-  Room 460<br>
+  Room 463B<br>
   Blocker Building (BLOC)<br>
+  Department of Statistics<br>
   3143 TAMU | 155 Ireland St<br>
   College Station, TX 77843-3143<br>
   USA
