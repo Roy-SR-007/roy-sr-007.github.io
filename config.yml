@@ -1,5 +1,5 @@
-baseURL: "https://pascalmichaillat.org/hugo-website/" 
-title: Moritz-Maria von Igelfeld
+baseURL: "https://roy-sr-007.github.io" 
+title: Somjit Roy
 theme: PaperMod
 
 enableInlineShortcodes: true
