@@ -19,7 +19,7 @@ menu:
           url: /
           weight: 1 
         - name: Research
-          url: /papers/
+          url: /research/
           weight: 2
         - name: Software
           url: /software/
@@ -30,9 +30,9 @@ menu:
         - name: News
           url: /news/
           weight: 5
-        - name: Contact
-          url: /contact/
-          weight: 5
+        #- name: Contact
+        #  url: /contact/
+        #  weight: 6
         #- name: Vitaè
         #  url: static/cv.pdf
         #  weight: 6
@@ -75,7 +75,9 @@ params:
           enabled: true
           title: Somjit Roy
           subtitle: |
-            I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Department of Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank">Texas A&M University</a>, where I am advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Dr. Bani K. Mallick</a> (TAMU Statistics) and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Dr. Debdeep Pati</a> (UW-Madison Statistics).
+            <p>I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Department of Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank">Texas A&M University</a>, where I am advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Dr. Bani K. Mallick</a> (TAMU Statistics) and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Dr. Debdeep Pati</a> (UW-Madison Statistics).</p>
+            <br>
+            <p>My research develops next-generation statistical modeling frameworks that integrate data-driven learning with scientific reasoning. I work at the intersection of scientifically guided statistical inference and computational Bayesian methods, with a focus on scientific machine learning, approximate Bayesian inference, and Bayesian optimization, motivated by applications in engineering, physics, geosciences, and bioinformatics. For more insights, visit the <a href="/research/">Research</a> page.</p>
           imageUrl: "somjit-1.jpg"
           imageWidth: 220
           imageHeight: 220
@@ -88,8 +90,8 @@ params:
               url: /awards/
             - name: News
               url: /news/
-            - name: Contact
-              url: /contact/
+            #- name: Contact
+            #  url: /contact/
             #- name: Vitaè
             #  url: static/cv.pdf
             #- name: Blog
