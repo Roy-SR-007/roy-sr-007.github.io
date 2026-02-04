@@ -121,7 +121,7 @@ params:
         - name: CV 
           url: resume.pdf
         - name: Location
-          url: location/
+          url: contact/
 
     assets:
         disableScrollBarStyle: true
