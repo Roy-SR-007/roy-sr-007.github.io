@@ -3,6 +3,8 @@ title: "Research"
 layout: single
 showToc: false
 hideMeta: true
+url: "/research/"
+slug: "research"
 ---
 
 <div class="rk-intro">
