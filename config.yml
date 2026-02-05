@@ -38,7 +38,7 @@ menu:
         #  weight: 6
 
 params:
-    description: "Somjit Roy - Ph.D. student in Statistics at Texas A&M University. My research lies at the intersection of Probabilistic Scientific Machine Learning and Computational Bayes."
+    description: "Somjit Roy - Ph.D. student in Statistics at Texas A&M University. My research lies at the intersection of probabilistic scientific machine learning and computational Bayes."
     author: "Somjit Roy | Texas A&M University"
     
     #env: production
