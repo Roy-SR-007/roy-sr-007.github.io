@@ -631,6 +631,172 @@ html:has(head link[rel="canonical"][href$="/awards/"]) .nk-card a:not(:hover){
   background-image: none !important;
   background-size: 0% 0% !important;
 }
+
+/* =========================================================
+   AWARDS — flip hint ring (animate once on load)
+   Uses .nk-card-inner::after (safe: does not clash with corner borders)
+   ========================================================= */
+
+/* Make sure inner can host an overlay */
+.nk-card-inner{
+  position: relative;
+}
+
+/* Ring overlay */
+.nk-card-inner::after{
+  content:"";
+  position:absolute;
+  top:10px;
+  right:12px;
+
+  width:18px;
+  height:18px;
+  border-radius:50%;
+
+  /* ring look */
+  background:
+    conic-gradient(
+      var(--accent, #500000) 0turn,
+      var(--accent, #500000) .78turn,
+      transparent .78turn
+    );
+
+  /* punch a hole to make it a ring */
+  -webkit-mask: radial-gradient(circle 7px, transparent 98%, #000 100%);
+  mask: radial-gradient(circle 7px, transparent 98%, #000 100%);
+
+  opacity:.7;
+  pointer-events:none;
+  z-index: 5;
+
+  /* animate once on page load */
+  animation: nk-award-ring-draw 1.05s ease-out .25s both;
+
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+/* Stronger on hover */
+.nk-card:hover .nk-card-inner::after{
+  opacity: .95;
+  transform: scale(1.08);
+}
+
+/* Hide after flip */
+.nk-card.is-flipped .nk-card-inner::after{
+  opacity: 0;
+  transform: scale(.85);
+}
+
+/* One-time draw */
+@keyframes nk-award-ring-draw{
+  from{ transform: scale(.78) rotate(-90deg); opacity: 0; }
+  to  { transform: scale(1)   rotate(0deg);   opacity: .7; }
+}
+
+/* Dark mode ring color */
+body.dark .nk-card-inner::after{
+  background:
+    conic-gradient(
+      #ddd8d8 0turn,
+      #ddd8d8 .78turn,
+      transparent .78turn
+    );
+}
+
+/* =========================================================
+   AWARDS — darker flip-hint ring
+   ========================================================= */
+
+/* Slightly darker maroon for better contrast */
+.nk-card-inner::after{
+  background:
+    conic-gradient(
+      color-mix(in srgb, var(--accent, #500000) 50%, black) 0turn,
+      color-mix(in srgb, var(--accent, #500000) 50%, black) .78turn,
+      transparent .78turn
+    );
+}
+
+/* Dark mode: deeper creamy white */
+body.dark .nk-card-inner::after{
+  background:
+    conic-gradient(
+      color-mix(in srgb, #ddd8d8 50%, black) 0turn,
+      color-mix(in srgb, #ddd8d8 50%, black) .78turn,
+      transparent .78turn
+    );
+}
+
+/* =========================================================
+   AWARDS — flip hint ring WITH arrow
+   (arrow points clockwise → suggests interaction)
+   ========================================================= */
+
+/* Ensure inner is positioning context */
+.nk-card-inner{
+  position: relative;
+}
+
+/* ---- Arrow head ---- */
+.nk-card-inner::before{
+  content:"";
+  position:absolute;
+
+  /* position arrow on ring (top-right quadrant) */
+  top: 8px;
+  right: 18px;
+
+  width: 0;
+  height: 0;
+
+  /* arrow shape */
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid
+    color-mix(in srgb, var(--accent, #500000) 85%, black);
+
+  transform: rotate(35deg) scale(.85);
+  opacity: 0;
+
+  pointer-events:none;
+  z-index: 6;
+
+  /* animate in sync with ring */
+  animation: nk-award-arrow-in 1.05s ease-out .35s both;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+/* Hover emphasis */
+.nk-card:hover .nk-card-inner::before{
+  opacity: .95;
+  transform: rotate(35deg) scale(1);
+}
+
+/* Hide arrow once flipped */
+.nk-card.is-flipped .nk-card-inner::before{
+  opacity: 0;
+  transform: scale(.7) rotate(35deg);
+}
+
+/* Dark mode arrow */
+body.dark .nk-card-inner::before{
+  border-left-color:
+    color-mix(in srgb, #ddd8d8 85%, black);
+}
+
+/* Arrow entrance animation */
+@keyframes nk-award-arrow-in{
+  from{
+    opacity: 0;
+    transform: translate(-4px,4px) rotate(35deg) scale(.6);
+  }
+  to{
+    opacity: .8;
+    transform: translate(0,0) rotate(35deg) scale(.85);
+  }
+}
+
+
 </style>
 
 
