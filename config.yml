@@ -75,7 +75,7 @@ params:
           enabled: true
           title: Somjit Roy
           subtitle: |
-            <div>I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank" rel="noopener">Department of Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank" rel="noopener">Texas A&amp;M University</a>, where I am advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank" rel="noopener">Dr. Bani K. Mallick</a> and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank" rel="noopener">Dr. Debdeep Pati</a>.</div>
+            <p>I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank" rel="noopener">Department&nbsp;of&nbsp;Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank" rel="noopener">Texas&nbsp;A&amp;M&nbsp;University</a>, where I am advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank" rel="noopener">Dr.&nbsp;Bani&nbsp;K.&nbsp;Mallick</a> and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank" rel="noopener">Dr.&nbsp;Debdeep&nbsp;Pati</a>.</p>
             <br>
             <div>My research bridges data-driven learning and scientific reasoning through computational Bayes, with a focus on scientific machine learning, approximate Bayesian inference, and Bayesian optimization for complex scientific systems. For more insights, visit the <a href="/research/">Research</a> page.</div>
           imageUrl: "somjit-1.jpg"
