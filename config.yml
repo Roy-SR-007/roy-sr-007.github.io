@@ -74,8 +74,8 @@ params:
     profileMode:
           enabled: true
           title: Somjit Roy
-          subtitle: |
-            <p>I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Department of Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank">Texas A&M University</a>, where I am working under the supervision of <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Dr. Bani K. Mallick</a> (TAMU Statistics) and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Dr. Debdeep Pati</a> (UW-Madison Statistics).</p>
+          subtitle: 
+            <p>I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Department of Statistics</a> at <a href="https://www.tamu.edu/index.html" target="_blank">Texas A&M University</a>, where I am working under the supervision of <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Dr. Bani K. Mallick</a> from TAMU Statistics and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Dr. Debdeep Pati</a> from UW-Madison Statistics.</p>
             <br>
             <p>My research bridges data-driven learning and scientific reasoning through computational Bayes, with a focus on scientific machine learning, approximate Bayesian inference, and Bayesian optimization for complex scientific systems. For more insights, visit the <a href="/research/">Research</a> page.</p>
           imageUrl: "somjit-1.jpg"
