@@ -4,6 +4,7 @@ date: 2026-02-04
 hidemeta: true
 hideTitle: false
 description: "How to reach me — email, office, and a map."
+url: "/contact/"
 slug: "contact"
 ---
 
@@ -232,6 +233,49 @@ margin-top: .6rem;
 font-size: .95rem;
 color: color-mix(in srgb, currentColor 66%, transparent);
 }
+
+/* =========================================================
+   CONTACT — entrance animation (once on page load)
+   Hero + cards + map (staggered)
+   ========================================================= */
+
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-hero,
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-card,
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-map{
+  opacity: 0;
+  transform: translateY(10px) scale(.985);
+  animation: ct-in 0.85s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+/* Stagger */
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-hero{ animation-delay: .06s; }
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-grid .ct-card:nth-child(1){ animation-delay: .14s; }
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-grid .ct-card:nth-child(2){ animation-delay: .22s; }
+html:has(head link[rel="canonical"][href*="/contact"]) .ct-map{ animation-delay: .30s; }
+
+@keyframes ct-in{
+  from{
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html:has(head link[rel="canonical"][href*="/contact"]) .ct-hero,
+  html:has(head link[rel="canonical"][href*="/contact"]) .ct-card,
+  html:has(head link[rel="canonical"][href*="/contact"]) .ct-map{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 </style>
 
 <!-- ======================================================

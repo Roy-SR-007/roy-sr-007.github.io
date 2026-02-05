@@ -14,6 +14,31 @@ slug: "research"
     approximate Bayesian inference, and Bayesian optimization, motivated by applications in engineering, physics, geosciences, and bioinformatics.
   </p>
 </div>
+
+<style>
+/* Animate Research blurb on page load (no :has needed) */
+.rk-intro{
+  opacity: 0;
+  transform: translateY(10px) scale(.985);
+  animation: rk-in .85s ease-out forwards;
+  animation-delay: .06s;
+  will-change: opacity, transform;
+}
+
+@keyframes rk-in{
+  from{ opacity: 0; transform: translateY(10px) scale(.985); }
+  to  { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .rk-intro{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+</style>
+
                        
 <section class="rk-tl">
 

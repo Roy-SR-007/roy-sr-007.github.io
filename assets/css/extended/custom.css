@@ -1260,6 +1260,51 @@ body.dark .post-content ul li::before{
   }
   
   /* =========================================================
+   RESEARCH — entrance animation (page load)
+   Matches CONTACT page animation exactly
+   ========================================================= */
+
+/* Target the research blurb */
+html:has(head link[rel="canonical"][href*="/research"])
+.rk-blurb,
+html:has(head link[rel="canonical"][href*="/research"])
+.research-blurb,
+html:has(head link[rel="canonical"][href*="/research"])
+.post-content > p:first-of-type{
+  opacity: 0;
+  transform: translateY(10px) scale(.985);
+  animation: rk-in .85s ease-out forwards;
+  animation-delay: .06s;
+  will-change: opacity, transform;
+}
+
+/* Same keyframes as CONTACT */
+@keyframes rk-in{
+  from{
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce){
+  html:has(head link[rel="canonical"][href*="/research"])
+  .rk-blurb,
+  html:has(head link[rel="canonical"][href*="/research"])
+  .research-blurb,
+  html:has(head link[rel="canonical"][href*="/research"])
+  .post-content > p:first-of-type{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+  /* =========================================================
      2) RESEARCH CARDS — same gradient border + hover lift
      ========================================================= */
   html:has(head link[rel="canonical"][href$="/research/"]) .rk-item{
@@ -1457,6 +1502,107 @@ body.dark .post-content ul li::before{
   }
 
   /* =========================================================
+   NEWS — year chevron: one-time entrance animation
+   Matches Awards ring affordance language
+   ========================================================= */
+
+/* Base chevron (ensure transform origin is clean) */
+.post-content details.ns-year > summary::after{
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Animate ONCE when page loads */
+.post-content details.ns-year > summary::after{
+  animation: nk-news-chevron-in 0.85s ease-out .25s both;
+}
+
+/* Closed state rotation preserved */
+.post-content details.ns-year:not([open]) > summary::after{
+  transform: rotate(-90deg);
+}
+
+/* Open state rotation preserved */
+.post-content details.ns-year[open] > summary::after{
+  transform: rotate(90deg);
+}
+
+/* Entrance animation */
+@keyframes nk-news-chevron-in{
+  from{
+    opacity: 0;
+    transform: translateX(-4px) scale(.6) rotate(-90deg);
+  }
+  to{
+    opacity: .85;
+    transform: translateX(0) scale(1) rotate(-90deg);
+  }
+}
+
+/* Hover emphasis (unchanged behavior, just smoother) */
+.post-content details.ns-year > summary:hover::after{
+  opacity: 1;
+  transform: scale(1.05)
+             rotate(var(--_chev-rot, -90deg));
+}
+
+/* Dark mode color parity */
+body.dark .post-content details.ns-year > summary::after{
+  color: #ddd8d8;
+}
+
+/* =========================================================
+   NEWS — card entrance animation (once on page load)
+   Matches Research cards & Awards ring
+   ========================================================= */
+
+/* Initial hidden state */
+html:has(head link[rel="canonical"][href$="/news/"])
+.ns-list li{
+  opacity: 0;
+  transform: translateY(10px) scale(.985);
+  animation: nk-news-card-in 0.85s ease-out forwards;
+}
+
+/* Elegant stagger (top to bottom) */
+html:has(head link[rel="canonical"][href$="/news/"])
+.ns-list li:nth-child(1){ animation-delay: .06s; }
+html:has(head link[rel="canonical"][href$="/news/"])
+.ns-list li:nth-child(2){ animation-delay: .12s; }
+html:has(head link[rel="canonical"][href$="/news/"])
+.ns-list li:nth-child(3){ animation-delay: .18s; }
+html:has(head link[rel="canonical"][href$="/news/"])
+.ns-list li:nth-child(4){ animation-delay: .24s; }
+html:has(head link[rel="canonical"][href$="/news/"])
+.ns-list li:nth-child(5){ animation-delay: .30s; }
+html:has(head link[rel="canonical"][href$="/news/"])
+.ns-list li:nth-child(6){ animation-delay: .36s; }
+
+/* Entrance animation */
+@keyframes nk-news-card-in{
+  from{
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce){
+  html:has(head link[rel="canonical"][href$="/news/"])
+  .ns-list li{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
+
+  /* =========================================================
    RESEARCH CARDS — match NEWS cards
    Same border color, same hover lift, same visual language
    ========================================================= */
@@ -1510,6 +1656,55 @@ html:has(head link[rel="canonical"][href$="/research/"]) .rk-body{
 html:has(head link[rel="canonical"][href$="/research/"]) .rk-pills{
   margin-top: .6rem;
 }
+
+
+/* =========================================================
+   RESEARCH — card entrance animation (once on page load)
+   Matches Awards ring & News chevron affordance language
+   ========================================================= */
+
+/* Initial hidden state */
+html:has(head link[rel="canonical"][href$="/research/"])
+.rk-item{
+  opacity: 0;
+  transform: translateY(10px) scale(.985);
+  animation: nk-research-card-in 0.85s ease-out forwards;
+}
+
+/* Stagger cards slightly for elegance */
+html:has(head link[rel="canonical"][href$="/research/"])
+.rk-item:nth-of-type(1){ animation-delay: .05s; }
+html:has(head link[rel="canonical"][href$="/research/"])
+.rk-item:nth-of-type(2){ animation-delay: .12s; }
+html:has(head link[rel="canonical"][href$="/research/"])
+.rk-item:nth-of-type(3){ animation-delay: .19s; }
+html:has(head link[rel="canonical"][href$="/research/"])
+.rk-item:nth-of-type(4){ animation-delay: .26s; }
+html:has(head link[rel="canonical"][href$="/research/"])
+.rk-item:nth-of-type(5){ animation-delay: .33s; }
+
+/* Entrance animation */
+@keyframes nk-research-card-in{
+  from{
+    opacity: 0;
+    transform: translateY(10px) scale(.985);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Respect reduced-motion users */
+@media (prefers-reduced-motion: reduce){
+  html:has(head link[rel="canonical"][href$="/research/"])
+  .rk-item{
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 
 /* =========================================================
    NEWS (ns-accord): clear "click to expand" affordance

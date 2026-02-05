@@ -797,6 +797,46 @@ body.dark .nk-card-inner::before{
 }
 
 
+/* =========================================================
+   AWARDS — card entrance animation (once on page load)
+   Scope: /awards/
+   Paste at the VERY END of the existing <style>
+   ========================================================= */
+
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item .nk-card{
+  opacity: 0;
+  transform: translateY(10px);
+  animation: nk-awards-card-in .55s ease-out both;
+}
+
+/* small stagger by position */
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(1) .nk-card{ animation-delay: .06s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(2) .nk-card{ animation-delay: .12s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(3) .nk-card{ animation-delay: .18s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(4) .nk-card{ animation-delay: .24s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(5) .nk-card{ animation-delay: .30s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(6) .nk-card{ animation-delay: .36s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(7) .nk-card{ animation-delay: .42s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(8) .nk-card{ animation-delay: .48s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(9) .nk-card{ animation-delay: .54s; }
+html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(10) .nk-card{ animation-delay: .60s; }
+
+@keyframes nk-awards-card-in{
+  from{ opacity: 0; transform: translateY(10px); }
+  to  { opacity: 1; transform: translateY(0); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item .nk-card{
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+
+
 </style>
 
 
