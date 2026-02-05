@@ -122,6 +122,31 @@ body.dark #footer{
    - Icon/SVG links: magnify on hover (unchanged)
    ========================================================= */
 
+/* =========================================================
+   Safari fix: prevent weird word-spacing in profile subtitle
+   (PaperMod profileMode subtitle)
+   ========================================================= */
+
+   .profile-mode .profile .profile_inner .subtitle,
+   .profile-mode .profile .profile_inner .subtitle p{
+     text-align: left !important;          /* avoid justify gaps */
+     text-justify: auto !important;
+     word-spacing: normal !important;
+     letter-spacing: normal !important;
+   
+     hyphens: none !important;             /* Safari hyphen/justify interaction */
+     -webkit-hyphens: none !important;
+   
+     overflow-wrap: anywhere;
+     word-break: normal;
+   }
+   
+   /* If your theme applies "justify" via a generic rule, this catches it */
+   .profile-mode .profile .profile_inner{
+     text-align: left !important;
+   }
+   
+
 /* Base link reset */
 .profile-mode a,
 .profile a,
