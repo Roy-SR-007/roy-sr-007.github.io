@@ -1,7 +1,7 @@
 MIT License
 
 Copyright (c) 2026–present Somjit Roy  
-Originally based on Niladri Kal's website (c) 2025-prersent  
+Originally based on Niladri Kal's website (c) 2025–prersent  
 and the Hugo theme by Pascal Michaillat (c) 2023–present  
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
