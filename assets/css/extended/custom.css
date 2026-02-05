@@ -742,23 +742,30 @@ body.dark #menu a::before{
    ========================================================= */
 
 /* 1) Prevent words from overflowing in justified text */
-.post-content p,
-.profile .profile_inner p,
-.home-info p{
+
+/* ===== Paragraph alignment: keep justify in posts, NOT in profile bio ===== */
+.post-content p{
   text-align: justify;
   text-justify: inter-word;
-
-  /* critical fixes */
   hyphens: auto;
   -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-
   overflow-wrap: break-word;
-  word-wrap: break-word;
   word-break: normal;
 }
 
-@supports (-webkit-touch-callout: none) {
+/* Profile + home info: left aligned to avoid Safari word spacing rivers */
+.profile .profile_inner p,
+.home-info p{
+  text-align: left !important;
+  text-justify: auto;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+
+/* @supports (-webkit-touch-callout: none) {
   .profile .profile__subtitle,
   .profile .profile__subtitle p,
   .profile-mode .profile__subtitle,
@@ -767,7 +774,7 @@ body.dark #menu a::before{
     text-align-last: auto !important;
     word-spacing: normal !important;
   }
-}
+} */
 
 
 /* Mobile: justification causes rivers → switch to left */
@@ -2042,6 +2049,31 @@ body.dark
 html:has(head link[rel="canonical"][href*="/contact"]) .ct-hero:hover{
   border-color: color-mix(in srgb, #ddd8d8 22%, transparent);
 }
+
+/* =========================================================
+   SAFARI FINAL OVERRIDE (must be LAST)
+   - prevents stretched word spacing in the Profile subtitle/bio
+   ========================================================= */
+   @supports (-webkit-touch-callout: none) {
+    .profile .profile_inner,
+    .profile .profile_inner p,
+    .profile-mode .profile_inner,
+    .profile-mode .profile_inner p,
+    .profile_inner .subtitle,
+    .profile_inner .subtitle p{
+      text-align: left !important;
+      text-align-last: left !important;
+      text-justify: auto !important;
+  
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+  
+      white-space: normal !important;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+    }
+  }
+  
 
 
 
