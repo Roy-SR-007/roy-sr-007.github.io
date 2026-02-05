@@ -77,9 +77,9 @@ params:
           subtitle: |
             <p>
             I am a third-year Ph.D. student in the <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank" rel="noopener">Department of Statistics</a>
-            at <a href="https://www.tamu.edu/index.html" target="_blank" rel="noopener">Texas A&amp;M University</a>,<br>
-            advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank" rel="noopener">Dr. Bani K. Mallick</a>
-            and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank" rel="noopener">Dr. Debdeep Pati</a>.
+            at <a href="https://www.tamu.edu/index.html" target="_blank" rel="noopener">Texas A&M University</a>,
+            advised by <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank" rel="noopener">Dr. Bani K. Mallick</a> (TAMU Statistics)
+            and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank" rel="noopener">Dr. Debdeep Pati</a> (UW-Madison Statistics).
             </p>  
             <br>
             <p>My research bridges data-driven learning and scientific reasoning through computational Bayes, with a focus on scientific machine learning, approximate Bayesian inference, and Bayesian optimization for complex scientific systems. For more insights, visit the <a href="/research/">Research</a> page.</p>
