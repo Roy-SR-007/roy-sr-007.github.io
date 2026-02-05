@@ -758,6 +758,18 @@ body.dark #menu a::before{
   word-break: normal;
 }
 
+@supports (-webkit-touch-callout: none) {
+  .profile .profile__subtitle,
+  .profile .profile__subtitle p,
+  .profile-mode .profile__subtitle,
+  .profile-mode .profile__subtitle p{
+    text-align: left !important;
+    text-align-last: auto !important;
+    word-spacing: normal !important;
+  }
+}
+
+
 /* Mobile: justification causes rivers → switch to left */
 @media (max-width: 680px){
   .post-content p,
