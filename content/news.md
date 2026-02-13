@@ -19,6 +19,13 @@ slug: "news"
 <li>
 <span class="ns-month">Feb</span>
 <span class="ns-body">
+<a href="https://arxiv.org/abs/2509.19710" target="_blank" rel="noopener">HierBOSSS</a> got featured in Texas A&M College News [<a href="http://tx.ag/SomjitRoy" target="_blank" rel="noopener">http://tx.ag/SomjitRoy</a>].
+</span>
+</li>
+
+<li>
+<span class="ns-month">Feb</span>
+<span class="ns-body">
 Work on <em>Frequentist Regret Analysis of Gaussian Process Thompson Sampling via Fractional Posteriors</em>
 submitted.
 </span>
