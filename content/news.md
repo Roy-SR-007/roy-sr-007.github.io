@@ -27,7 +27,7 @@ slug: "news"
 <span class="ns-month">Feb</span>
 <span class="ns-body">
 Work on <em>Frequentist Regret Analysis of Gaussian Process Thompson Sampling via Fractional Posteriors</em>
-submitted.
+submitted (<a href="https://arxiv.org/abs/2602.14472" target="_blank" rel="noopener">arXiv</a>).
 </span>
 </li>
 

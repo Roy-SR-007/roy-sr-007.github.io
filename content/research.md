@@ -68,6 +68,9 @@ slug: "research"
 We study Gaussian Process Thompson Sampling (GP-TS) for sequential decision-making over compact, continuous action spaces and provide a frequentist regret analysis based on fractional Gaussian process posteriors, without relying on domain discretization as in prior work. We show that the variance inflation commonly assumed in existing analyses of GP-TS can be interpreted as Thompson Sampling with respect to a fractional posterior with tempering parameter $\alpha \in (0,1)$. We derive a kernel-agnostic regret bound expressed in terms of the information gain parameter $\gamma_t$ and the posterior contraction rate $\epsilon_t$, and identify conditions on the Gaussian process prior under which $\epsilon_t$ can be controlled. As special cases of our general bound, we recover regret of order $\mathcal{\tilde O}(T^{\frac{1}{2}})$ for the squared exponential kernel, $\mathcal{\tilde O}(T^{\frac{2\nu+3d}{2(2\nu+d)}} )$ for the Mat&eacutern-$\nu$ kernel, and a bound of order $\tilde{\mathcal O}(T^{\frac{2\nu+3d}{2(2\nu+d)}})$ for the rational quadratic kernel. Overall, our analysis provides a unified and discretization-free regret framework for GP-TS that applies broadly across kernel classes.
 </div>
 </details>
+<a class="rk-pill rk-external"
+    href="https://arxiv.org/abs/2602.14472"
+    target="_blank" rel="noopener noreferrer">arXiv</a>
 </div>
 </div>
 </article>
