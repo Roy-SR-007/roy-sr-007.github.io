@@ -16,6 +16,21 @@ slug: "news"
 </summary>
 
 <ul class="ns-list">
+
+<li>
+<span class="ns-month">March</span>
+<span class="ns-body">
+Work on <em>VaSST: Variational Inference for Symbolic Regression using Soft Symbolic Trees</em> submitted (<a href="https://arxiv.org/abs/2602.23561" target="_blank" rel="noopener">arXiv</a>).
+</span>
+</li>
+
+<li>
+<span class="ns-month">Feb</span>
+<span class="ns-body">
+Will be joining <a href="https://www.upstart.com" target="_blank" rel="noopener">Upstart</a> as a <em>Research Scientist Intern</em> this summer.
+</span>
+</li>
+
 <li>
 <span class="ns-month">Feb</span>
 <span class="ns-body">

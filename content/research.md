@@ -50,6 +50,32 @@ slug: "research"
 <div class="rk-items">
 
 <article class="rk-item">
+<div class="rk-left"><span class="rk-tag">VaSST</span></div>
+<div class="rk-body">
+<h3 class="rk-title">VaSST: Variational Inference for Symbolic Regression using Soft Symbolic Trees</h3>
+<div class="rk-meta">
+<strong>Somjit Roy</strong>, Pritam Dey, and Bani K. Mallick 
+<span class="rk-status"><em>Submitted, Under review</em></span>
+</div>
+<div class="rk-pills">
+<!--<details class="rk-details">
+<summary class="rk-pill">Awards</summary>
+<ul class="rk-awards"><li>🥈 Silver Prize – 2024 SETCASA Poster Session</li></ul>
+</details>-->
+<details class="rk-details">
+<summary class="rk-pill">Abstract</summary>
+<div class="rk-abstract">
+Symbolic regression has recently gained traction in AI-driven scientific discovery, aiming to recover explicit closed-form expressions from data that reveal underlying physical laws. Despite recent advances, existing methods remain dominated by heuristic search algorithms or data-intensive approaches that assume low-noise regimes and lack principled uncertainty quantification. Fully probabilistic formulations are scarce, and existing Markov chain Monte Carlo-based Bayesian methods often struggle to efficiently explore the highly multimodal combinatorial space of symbolic expressions. We introduce VaSST, a scalable probabilistic framework for symbolic regression based on variational inference. VaSST employs a continuous relaxation of symbolic expression trees, termed soft symbolic trees, where discrete operator and feature assignments are replaced by soft distributions over allowable components. This relaxation transforms the combinatorial search over an astronomically large symbolic space into an efficient gradient-based optimization problem while preserving a coherent probabilistic interpretation. The learned soft representations induce posterior distributions over symbolic structures, enabling principled uncertainty quantification. Across simulated experiments and Feynman Symbolic Regression Database within SRBench, VaSST achieves superior performance in both structural recovery and predictive accuracy compared to state-of-the-art symbolic regression methods.
+</div>
+</details>
+<a class="rk-pill rk-external"
+    href="https://arxiv.org/abs/2602.23561"
+    target="_blank" rel="noopener noreferrer">arXiv</a>
+</div>
+</div>
+</article>
+
+<article class="rk-item">
 <div class="rk-left"><span class="rk-tag">GP-TS</span></div>
 <div class="rk-body">
 <h3 class="rk-title">Frequentist Regret Analysis of Gaussian Process Thompson Sampling via Fractional Posteriors</h3>
