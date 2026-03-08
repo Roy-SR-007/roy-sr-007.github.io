@@ -143,7 +143,7 @@ We study Gaussian Process Thompson Sampling (GP-TS) for sequential decision-maki
 <h3 class="rk-title">A Generalized Tangent Approximation based Variational Inference Framework for Strongly Super-Gaussian Likelihoods</h3>
 <div class="rk-meta">
 <strong>Somjit Roy</strong>, Pritam Dey, Debdeep Pati, and Bani K. Mallick
-<span class="rk-status"><em>Submitted, Under review</em></span>
+<span class="rk-status"><em>Major revision invited at JASA Theory & Methods</em></span>
 </div>
 
 <div class="rk-pills">
