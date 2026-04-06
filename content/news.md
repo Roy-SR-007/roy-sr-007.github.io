@@ -18,6 +18,13 @@ slug: "news"
 <ul class="ns-list">
 
 <li>
+<span class="ns-month">April</span>
+<span class="ns-body">
+<a href="https://arxiv.org/abs/2509.19710" target="_blank" rel="noopener">HierBOSSS</a> awarded the 2026 IMS Hannan Graduate Student Travel Award for presenting at <a href="https://isba2026.github.io" target="_blank" rel="noopener">2026 ISBA World Meeting</a> in Nagoya, Japan.
+</span>
+</li>
+
+<li>
 <span class="ns-month">March</span>
 <span class="ns-body">
 Work on <em>VaSST: Variational Inference for Symbolic Regression using Soft Symbolic Trees</em> submitted (<a href="https://arxiv.org/abs/2602.23561" target="_blank" rel="noopener">arXiv</a>).
