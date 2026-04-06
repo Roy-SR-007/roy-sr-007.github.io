@@ -850,6 +850,29 @@ html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(10) .n
 
 <!-- ITEM -->
 <div class="nk-item">
+    <div><span class="nk-sem">IMS 2026</span></div>
+    <div class="nk-card" tabindex="0" role="button" aria-pressed="false" aria-label="Toggle IMS">
+    <!-- connectors -->
+    <span class="nk-conn-h" aria-hidden="true"></span>
+    <span class="nk-conn-elbow" aria-hidden="true"></span>
+
+<div class="nk-card-inner">
+    <!-- Front -->
+    <div class="nk-face front">
+        <div class="nk-title">2026 IMS Hannan Graduate Student Travel Award</div>
+        <div class="nk-desc"><a href="https://arxiv.org/abs/2509.19710" target="_blank" rel="noopener">HierBOSSS</a> was awarded the 2026 IMS Hannan Graduate Student Travel Award by the Institute of Mathematical Statistics (IMS).</div>
+    </div>
+    <!-- Back -->
+    <div class="nk-face back">
+        <div class="nk-duty-title">Award Impact</div>
+        <div class="nk-duty">Presentation at <a href="https://isba2026.github.io" target="_blank" rel="noopener">2026 ISBA World Meeting</a> in Nagoya, Japan.</div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- ITEM -->
+<div class="nk-item">
     <div><span class="nk-sem">SBSS 2026</span></div>
     <div class="nk-card" tabindex="0" role="button" aria-pressed="false" aria-label="Toggle SBSS">
     <!-- connectors -->
