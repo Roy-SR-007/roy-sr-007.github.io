@@ -20,7 +20,7 @@ slug: "news"
 <li>
 <span class="ns-month">April</span>
 <span class="ns-body">
-<a href="https://arxiv.org/abs/2509.19710" target="_blank" rel="noopener">HierBOSSS</a> awarded the 2026 IMS Hannan Graduate Student Travel Award for presenting at <a href="https://isba2026.github.io" target="_blank" rel="noopener">2026 ISBA World Meeting</a> in Nagoya, Japan.
+<a href="https://arxiv.org/abs/2509.19710" target="_blank" rel="noopener">HierBOSSS</a> got awarded the 2026 IMS Hannan Graduate Student Travel Award for presenting at <a href="https://isba2026.github.io" target="_blank" rel="noopener">2026 ISBA World Meeting</a> in Nagoya, Japan.
 </span>
 </li>
 
