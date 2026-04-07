@@ -873,6 +873,29 @@ html:has(head link[rel="canonical"][href$="/awards/"]) .nk-item:nth-child(10) .n
 
 <!-- ITEM -->
 <div class="nk-item">
+    <div><span class="nk-sem">SDSS 2026</span></div>
+    <div class="nk-card" tabindex="0" role="button" aria-pressed="false" aria-label="Toggle IMS">
+    <!-- connectors -->
+    <span class="nk-conn-h" aria-hidden="true"></span>
+    <span class="nk-conn-elbow" aria-hidden="true"></span>
+
+<div class="nk-card-inner">
+    <!-- Front -->
+    <div class="nk-face front">
+        <div class="nk-title">2026 ASA SDSS Scholarship</div>
+        <div class="nk-desc"><a href="https://arxiv.org/abs/2509.19710" target="_blank" rel="noopener">HierBOSSS</a> was awarded the 2026 ASA SDSS Student and Early Career Scholarship.</div>
+    </div>
+    <!-- Back -->
+    <div class="nk-face back">
+        <div class="nk-duty-title">Award Impact</div>
+        <div class="nk-duty">Invited refereed presentation at <a href="https://ww2.amstat.org/meetings/sdss/2026/" target="_blank" rel="noopener">SDSS 2026</a> in Milwaukee, Wisconsin, USA.</div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- ITEM -->
+<div class="nk-item">
     <div><span class="nk-sem">SBSS 2026</span></div>
     <div class="nk-card" tabindex="0" role="button" aria-pressed="false" aria-label="Toggle SBSS">
     <!-- connectors -->

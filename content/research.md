@@ -129,8 +129,11 @@ We study Gaussian Process Thompson Sampling (GP-TS) for sequential decision-maki
 
 <details class="rk-details">
   <summary class="rk-pill">Awards</summary>
+  <ul class="rk-awards"><li>2026 IMS Hannan Graduate Student Travel Award</li></ul>
   <ul class="rk-awards"><li>2026 ASA SBSS Student Paper Award</li></ul>
+  <ul class="rk-awards"><li>2026 ASA SDSS Student and Early Career Scholarship</li></ul>
   <ul class="rk-awards"><li>2026 ASA SDSS Refereed Talk</li></ul>
+  <ul class="rk-awards"><li>Texas A&M Graduate Research and Presentation (RAP) Travel Award</li></ul>
 </details>
 </div>
 </div>
