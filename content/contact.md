@@ -302,7 +302,7 @@ html:has(head link[rel="canonical"][href*="/contact"]) .ct-map{ animation-delay:
 
 <div class="ct-hero">
 <p>
-  If you’d like to discuss research or collaboration, the best way to reach me is email.
+  If you’d like to discuss research or collaboration, the best way to reach me is by email.
 </p>
 </div>
 

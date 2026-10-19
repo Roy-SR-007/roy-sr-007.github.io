@@ -76,12 +76,12 @@ params:
           title: Somjit Roy
           subtitle: |
             <div class="nk-aff-htl">
-              <div class="nk-aff-hitem nk-aff-hitem--primary">
-                <div class="nk-aff-horg">Texas A&amp;M University</div>
+              <div class="nk-aff-hitem nk-aff-hitem--current">
+                <div class="nk-aff-horg">Texas A&amp;M University &thinsp;<span class="nk-now">Now</span></div>
                 <div class="nk-aff-hrole">Ph.D. Student &middot; Statistics</div>
               </div>
-              <div class="nk-aff-hitem nk-aff-hitem--current">
-                <div class="nk-aff-horg">Upstart &thinsp;<span class="nk-now">Now</span></div>
+              <div class="nk-aff-hitem">
+                <div class="nk-aff-horg">Upstart</div>
                 <div class="nk-aff-hrole">Research Scientist Intern</div>
               </div>
               <div class="nk-aff-hitem">
@@ -91,15 +91,13 @@ params:
             </div>
             <div class="nk-bio-desktop">
             <p>
-            I am a third-year Ph.D. student in the
+            I am a fourth-year Ph.D. student in the
             <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Department of Statistics</a>
             at <a href="https://www.tamu.edu/index.html" target="_blank">Texas A&M University</a>,
             advised by
             <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Dr. Bani K. Mallick</a>
             and
             <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Dr. Debdeep Pati</a>.
-            This summer, I have joined the Machine Learning
-            team at <a href="https://www.upstart.com/" target="_blank">Upstart</a> as a Research Scientist Intern.
             </p>
             <p style="margin-top:.6rem">
             My research bridges data-driven learning and scientific reasoning through computational Bayes,
@@ -109,11 +107,10 @@ params:
             </div>
             <div class="nk-bio-mobile">
             <p>
-            I am a third-year Ph.D. student in
+            I am a fourth-year Ph.D. student in
             <a href="https://artsci.tamu.edu/statistics/index.html" target="_blank">Texas A&M Statistics</a>,
             advised by Drs. <a href="https://sites.google.com/tamu.edu/bani-k-mallick/bio" target="_blank">Bani K. Mallick</a>
             and <a href="https://pages.stat.wisc.edu/~dpati2/" target="_blank">Debdeep Pati</a>.
-            This summer, I have joined the ML team at <a href="https://www.upstart.com/" target="_blank">Upstart</a> as a Research Scientist Intern.
             </p>
             <p style="margin-top:.4rem">
             My research bridges data-driven learning and scientific reasoning through computational Bayes,
