@@ -52,6 +52,7 @@ slug: "research"
 </details>
 <a class="rk-pill rk-external" href="https://doi.org/10.1080/01621459.2026.2749698" target="_blank" rel="noopener noreferrer">Journal</a>
 <a class="rk-pill rk-external" href="https://arxiv.org/abs/2504.05431" target="_blank" rel="noopener noreferrer">arXiv</a>
+<a class="rk-pill rk-external" href="/slides/TAVIE-SSG_JSM2026_slides.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
 </div>
 </div>
 </article>
@@ -82,6 +83,7 @@ Symbolic regression (SR) has gained recent traction in AI-driven scientific disc
 <a class="rk-pill rk-external"
     href="https://arxiv.org/abs/2602.23561"
     target="_blank" rel="noopener noreferrer">arXiv</a>
+<a class="rk-pill rk-external" href="/slides/VaSST_UAI2026_poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
 </div>
 </div>
 </article>
@@ -103,6 +105,7 @@ Symbolic regression (SR) has gained recent traction in AI-driven scientific disc
 <a class="rk-pill rk-external"
     href="https://arxiv.org/abs/2509.19710"
     target="_blank" rel="noopener noreferrer">arXiv</a>
+<a class="rk-pill rk-external" href="/slides/HierBOSSS_SAMBA2026_slides.pdf" target="_blank" rel="noopener noreferrer">Slides</a>
 
 <details class="rk-details">
   <summary class="rk-pill">Awards</summary>
