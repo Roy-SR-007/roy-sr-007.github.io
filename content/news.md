@@ -9,6 +9,23 @@ slug: "news"
 
 <div class="ns-accord">
 
+<!-- ===== 2027 ===== -->
+<details class="ns-year" open>
+<summary>
+<span class="ns-yearlabel" data-year="2027">'27</span>
+</summary>
+
+<ul class="ns-list">
+
+<li data-type="talk">
+<span class="ns-month">03/27</span>
+<span class="ns-body">
+<span class="ns-badge">New</span><a href="https://arxiv.org/abs/2509.19710" target="_blank" rel="noopener">HierBOSSS</a> was selected for presentation at <a href="https://sites.google.com/view/bayst2027" target="_blank" rel="noopener">BAYST 2027</a>, a workshop on Bayesian structural learning, at the Karlsruhe Institute of Technology in Karlsruhe, Germany.
+</span>
+</li>
+</ul>
+</details>
+
 <!-- ===== 2026 ===== -->
 <details class="ns-year" open>
 <summary>
@@ -240,7 +257,7 @@ was published in the <em>Journal of Statistical Theory and Practice</em>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const CURRENT_YEAR = "2026";
+  const OPEN_YEARS = ["2027", "2026"];
 
   document.querySelectorAll("details.ns-year").forEach((el) => {
     const label = el.querySelector(".ns-yearlabel");
@@ -249,8 +266,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const baseYear = label.dataset.year || label.textContent.trim();
 
-    // Keep only CURRENT_YEAR open on load
-    if (baseYear !== CURRENT_YEAR) {
+    // Keep only OPEN_YEARS open on load
+    if (!OPEN_YEARS.includes(baseYear)) {
       el.removeAttribute("open");
     } else {
       el.setAttribute("open", "");
